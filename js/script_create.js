@@ -54,9 +54,9 @@ function handleFiles(files) {
                 imageCard.setAttributeNode(attr2);
 
                 imageCard.innerHTML = `
-                                <img src="${e.target.result}" onerror="this.onerror=null;this.src='../resources/photo.svg';" alt="${file.name}" draggable="false" loading="lazy">
+                                <img src="${e.target.result}" onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="${file.name}" draggable="false" loading="lazy">
                                 <div class="btn-delete" onclick="removeImage(this);">
-                                    <img src="../resources/trash.svg" alt="delete" draggable="false" loading="lazy">
+                                    <img src="/resources/trash.svg" alt="delete" draggable="false" loading="lazy">
                                 </div>`;
 
                 imageCard.addEventListener('dragstart', handleDragStart);
@@ -202,7 +202,7 @@ function resetImageData() {
 const units = document.querySelector('.units');
 const btnAddUnit = `
                         <div class="btn-add-unit" onclick="addNewUnit()">
-                            <img src="../resources/plus-grey.svg" alt="add-unit" draggable="false" loading="lazy">
+                            <img src="/resources/plus-grey.svg" alt="add-unit" draggable="false" loading="lazy">
                             <p class="hint">Tambahkan unit baru</p>
                         </div>`;
 
@@ -232,19 +232,19 @@ function generateUnit(unitName, unitPrice, unitPeriod, index) {
                         <div class="unit-group">
                             <div class="unit-name">
                                 <div class="unit-name-icon">
-                                    <img src="../resources/building-community-grey.svg" alt="unit" draggable="false" loading="lazy">
+                                    <img src="/resources/building-community-grey.svg" alt="unit" draggable="false" loading="lazy">
                                 </div>
                                 <div class="unit-name-input">
                                     <label for="unitname">Nama Unit</label>
                                     <input type="text" name="unitname" id="unitname" placeholder="(Cth. Kontrakan, Kost Kosongan, Kost Isian, dsb.)" value="${unitName}">
                                 </div>
                                 <div class="btn-delete-unit" onclick="deleteUnit(this)">
-                                    <img src="../resources/trash-x.svg" alt="delete-unit" draggable="false" loading="lazy">
+                                    <img src="/resources/trash-x.svg" alt="delete-unit" draggable="false" loading="lazy">
                                 </div>
                             </div>
                             <div class="unit-price">
                                 <div class="unit-price-icon">
-                                    <img src="../resources/cash.svg" alt="unit-price" draggable="false" loading="lazy">
+                                    <img src="/resources/cash.svg" alt="unit-price" draggable="false" loading="lazy">
                                 </div>
                                 <div class="unit-price-input">
                                     <label for="unitprice">Harga Unit</label>
@@ -304,7 +304,7 @@ function handleBlur(unitPriceInput) {
 const contacts = document.querySelector('.contacts');
 const btnAddContact = `
                         <div class="btn-add-contact" onclick="addNewContact()">
-                            <img src="../resources/plus-grey.svg" alt="add-contact" draggable="false" loading="lazy">
+                            <img src="/resources/plus-grey.svg" alt="add-contact" draggable="false" loading="lazy">
                             <p class="hint">Tambahkan kontak baru</p>
                         </div>`;
 
@@ -340,7 +340,7 @@ function generateContact(contactName, contactNumber) {
                                 <input type="number" name="contactnumber" id="contactnumber" placeholder="(Ketik nomor kontak)" value="${contactNumber}">
                             </div>
                             <div class="btn-delete-contact" onclick="deleteContact(this)">
-                                <img src="../resources/trash-x.svg" alt="delete-contact" draggable="false" loading="lazy">
+                                <img src="/resources/trash-x.svg" alt="delete-contact" draggable="false" loading="lazy">
                             </div>
                         </div>`;
 

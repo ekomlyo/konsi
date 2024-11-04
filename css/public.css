@@ -798,7 +798,7 @@ select:focus {
 .search .search-wrapper .search-cards .search-cards-wrapper .card .thumb .carousel .slide {
     width: 100%;
     height: 100%;
-    background: url('../resources/photo.svg');
+    background: url('/resources/photo.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

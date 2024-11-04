@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KONSI | Kost Kontrakan Sekitar ISI</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../resources/favicon.svg">
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.svg">
     <!-- Style -->
-    <link rel="stylesheet" href="../css/public.css">
-    <link rel="stylesheet" href="../css/style_about.css">
+    <link rel="stylesheet" href="/css/public.css">
+    <link rel="stylesheet" href="/css/style_preview.css">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +27,12 @@
             <div class="actions">
                 <ul class="nav-links">
                     <li><a href="index.html">Beranda</a></li>
-                    <li class="active"><a href="">Tentang</a></li>
+                    <li><a href="about.html">Tentang</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
                 <div class="actions-wrapper">
                     <div class="btn-search" onclick="setSearchVisibility();">
-                        <img src="../resources/search-light.svg" alt="search" draggable="false" loading="lazy">
+                        <img src="/resources/search-light.svg" alt="search" draggable="false" loading="lazy">
                     </div>
                     <div class="toggle-menu" onclick="setToggleMenu();">
                         <span class="bar"></span>
@@ -49,27 +49,54 @@
                         </a>
                         <div class="sdb-actions">
                             <div class="sdb-search-box" onclick="setSearchVisibility();">
-                                <img src="../resources/search-grey.svg" alt="search" draggable="false" loading="lazy">
+                                <img src="/resources/search-grey.svg" alt="search" draggable="false" loading="lazy">
                                 <p class="sdb-placeholder">Cari nama kost atau kontrakan</p>
                             </div>
                             <p class="sdb-label">Navigasi</p>
                             <ul class="sdb-nav-links">
-                                <li>
+                                <li class="active">
                                     <a href="index.html">
-                                        <img src="../resources/home-light.svg" alt="home" draggable="false" loading="lazy">
+                                        <img src="/resources/home-light.svg" alt="home" draggable="false" loading="lazy">
                                         <p>Beranda</p>
                                     </a>
                                 </li>
-                                <li class="active">
-                                    <a href="">
-                                        <img src="../resources/info.svg" alt="about" draggable="false" loading="lazy">
+                                <li>
+                                    <a href="about.html">
+                                        <img src="/resources/info.svg" alt="about" draggable="false" loading="lazy">
                                         <p>Tentang</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="faq.html">
-                                        <img src="../resources/message.svg" alt="faq" draggable="false" loading="lazy">
+                                        <img src="/resources/message.svg" alt="faq" draggable="false" loading="lazy">
                                         <p>FAQ</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <p class="sdb-label">Lompat ke</p>
+                            <ul class="sdb-nav-links">
+                                <li>
+                                    <a href="#units" onclick="setToggleMenu();">
+                                        <img src="/resources/building-community.svg" alt="units" draggable="false" loading="lazy">
+                                        <p>Unit</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#facilities" onclick="setToggleMenu();">
+                                        <img src="/resources/armchair.svg" alt="facilities" draggable="false" loading="lazy">
+                                        <p>Fasilitas</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#maps" onclick="setToggleMenu();">
+                                        <img src="/resources/map-light.svg" alt="maps" draggable="false" loading="lazy">
+                                        <p>Maps</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#contact" onclick="setToggleMenu();">
+                                        <img src="/resources/phone.svg" alt="contact" draggable="false" loading="lazy">
+                                        <p>Kontak</p>
                                     </a>
                                 </li>
                             </ul>
@@ -77,7 +104,7 @@
                         <div class="sdb-invitation">
                             <p class="sdb-hook">Punya info kost atau kontrakan lain?</p>
                             <a href="create.html" class="sdb-btn-add-new">
-                                <img src="../resources/plus-blue.svg" alt="add-new" draggable="false" loading="lazy">
+                                <img src="/resources/plus-blue.svg" alt="add-new" draggable="false" loading="lazy">
                                 <p>Tambahkan Sekarang</p>
                             </a>
                         </div>
@@ -85,17 +112,89 @@
                 </div>
             </div>
         </div>
+        <div class="shortcut">
+            <ul class="shortcut-links">
+                <li>
+                    <a href="#units">
+                        <img src="/resources/building-community.svg" alt="units" draggable="false" loading="lazy">
+                        <p>Unit</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#facilities">
+                        <img src="/resources/armchair.svg" alt="facilities" draggable="false" loading="lazy">
+                        <p>Fasilitas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#maps">
+                        <img src="/resources/map-light.svg" alt="maps" draggable="false" loading="lazy">
+                        <p>Maps</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        <img src="/resources/phone.svg" alt="contact" draggable="false" loading="lazy">
+                        <p>Kontak</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <!-- Scroll Up -->
     <div class="btn-scroll" onclick="scrollUp()">
-        <img src="../resources/chevrons-up.svg" alt="scroll-up" draggable="false" loading="lazy">
+        <img src="/resources/chevrons-up.svg" alt="scroll-up" draggable="false" loading="lazy">
     </div>
 
     <!-- Content -->
-    <div class="about">
-        <div class="about-wrapper">
-            Tentang
+    <div class="preview">
+        <div class="preview-wrapper">
+            <div class="thumb">
+                <div class="carousel"></div>
+                <div class="carousel-btn-nav">
+                    <div class="btn-previous">
+                        <img src="/resources/chevron-left-light.svg" alt="previous" draggable="false" loading="lazy" />
+                    </div>
+                    <div class="btn-next">
+                        <img src="/resources/chevron-right-light.svg" alt="next" draggable="false" loading="lazy" />
+                    </div>
+                </div>
+                <p class="pagination-numbers"><span class="current-page">1</span>/<span class="total-page">1</span></p>
+                <div class="btn-view-photo" onclick="setGalleryVisibility();">
+                    <img src="/resources/maximize.svg" alt="maximize" draggable="false" loading="lazy">
+                    <p>Luaskan</p>
+                </div>
+            </div>
+            <div class="desc">
+                <p class="name"></p>
+                <div class="date">
+                    <img src="/resources/calendar.svg" alt="calendar" draggable="false" loading="lazy">
+                    <p>Diposting:</p>
+                </div>
+                <div class="location">
+                    <img src="/resources/map-dark.svg" alt="location" draggable="false" loading="lazy">
+                    <p></p>
+                </div>
+                <div class="categories">
+                </div>
+            </div>
+            <div id="units" class="units">
+                <p class="label">Unit</p>
+                <div class="categories"></div>
+            </div>
+            <div id="facilities" class="facilities">
+                <p class="label">Fasilitas</p>
+                <p class="contents"></p>
+            </div>
+            <div id="maps" class="maps">
+                <p class="label">Maps</p>
+                <iframe src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div id="contacts" class="contacts">
+                <p class="label">Kontak</p>
+                <div class="numbers"></div>
+            </div>
         </div>
     </div>
 
@@ -107,20 +206,43 @@
                 <p>Kost Kontrakan<br />Sekitar ISI</p>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html">Beranda</a></li>
+                <li><a href="">Beranda</a></li>
                 <li>•</li>
-                <li><a href="">Tentang</a></li>
+                <li><a href="about.html">Tentang</a></li>
                 <li>•</li>
                 <li><a href="faq.html">FAQ</a></li>
             </ul>
             <div class="invitation">
                 <p class="hook">Punya info kost atau kontrakan lain?</p>
                 <a href="create.html" class="btn-add-new">
-                    <img src="../resources/plus-light.svg" alt="add-new" draggable="false" loading="lazy">
+                    <img src="/resources/plus-light.svg" alt="add-new" draggable="false" loading="lazy">
                     <p>Tambahkan Sekarang</p>
                 </a>
             </div>
             <p class="copyright">©<span class="year">[Year]</span> KONSI. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery">
+        <span class="outer-color"></span>
+        <div class="actions">
+            <div class="actions-wrapper">
+                <p class="label">Galeri</p>
+                <p class="pagination-numbers">•<span class="current-page">1</span>/<span class="total-page">1</span></p>
+                <div class="btn-close" onclick="setGalleryVisibility();">
+                    <img src="/resources/x.svg" alt="btn-close-gallery" draggable="false" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="carousel"></div>
+        <div class="carousel-btn-nav">
+            <div class="btn-previous">
+                <img src="/resources/chevron-left-light.svg" alt="previous" draggable="false" loading="lazy" />
+            </div>
+            <div class="btn-next">
+                <img src="/resources/chevron-right-light.svg" alt="next" draggable="false" loading="lazy" />
+            </div>
         </div>
     </div>
 
@@ -131,7 +253,7 @@
             <div class="search-box">
                 <div class="search-box-wrapper">
                     <div class="search-box-input">
-                        <img src="../resources/search-grey.svg" alt="search" draggable="false" loading="lazy">
+                        <img src="/resources/search-grey.svg" alt="search" draggable="false" loading="lazy">
                         <input type="text" placeholder="Cari nama kost atau kontrakan">
                     </div>
                     <div class="btn-close" onclick="setSearchVisibility();">
@@ -145,18 +267,18 @@
                         <div class="thumb">
                             <div class="carousel">
                                 <div class="slide">
-                                    <img src="../resources/image-1.jpg" onerror="this.onerror=null;this.src='../resources/photo.svg';" alt="slide-1" draggable="false" loading="lazy">
+                                    <img src="/resources/image-1.jpg" onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-1" draggable="false" loading="lazy">
                                 </div>
                                 <div class="slide">
-                                    <img src="../resources/image-2.jpg" onerror="this.onerror=null;this.src='../resources/photo.svg';" alt="slide-2" draggable="false" loading="lazy">
+                                    <img src="/resources/image-2.jpg" onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-2" draggable="false" loading="lazy">
                                 </div>
                             </div>
                             <div class="carousel-btn-nav">
                                 <div class="btn-previous">
-                                    <img src="../resources/chevron-left-dark.svg" alt="previous" draggable="false" loading="lazy" />
+                                    <img src="/resources/chevron-left-dark.svg" alt="previous" draggable="false" loading="lazy" />
                                 </div>
                                 <div class="btn-next">
-                                    <img src="../resources/chevron-right-dark.svg" alt="next" draggable="false" loading="lazy" />
+                                    <img src="/resources/chevron-right-dark.svg" alt="next" draggable="false" loading="lazy" />
                                 </div>
                             </div>
                             <div class="pagination-dots">
@@ -172,11 +294,11 @@
                             </div>
                             <p class="name">Omah Darmo</p>
                             <div class="date">
-                                <img src="../resources/calendar.svg" alt="calendar" draggable="false" loading="lazy">
+                                <img src="/resources/calendar.svg" alt="calendar" draggable="false" loading="lazy">
                                 <p>Diposting: 22 Juni 2024</p>
                             </div>
                             <div class="location">
-                                <img src="../resources/map-dark.svg" alt="location" draggable="false" loading="lazy">
+                                <img src="/resources/map-dark.svg" alt="location" draggable="false" loading="lazy">
                                 <p>Panggungharjo, Sewon, Bantul</p>
                             </div>
                             <div class="desc-wrapper">
@@ -184,9 +306,9 @@
                                     <p class="price-wrapper">Rp700.000 - Rp750.000<span class="spesification">/bulan</span></p>
                                     <p class="note">*) Harga bisa saja berubah.</p>
                                 </div>
-                                <div class="btn-open" onclick="viewDetails(1);">
+                                <div class="btn-open" onclick="viewDetails(0);">
                                     <p>Lihat</p>
-                                    <img src="../resources/chevron-right-light.svg" alt="open" draggable="false" loading="lazy">
+                                    <img src="/resources/chevron-right-light.svg" alt="open" draggable="false" loading="lazy">
                                 </div>
                             </div>
                         </div>
@@ -196,18 +318,18 @@
                         <div class="thumb">
                             <div class="carousel">
                                 <div class="slide">
-                                    <img src="../resources/image-1.jpg" onerror="this.onerror=null;this.src='../resources/photo.svg';" alt="slide-1" draggable="false" loading="lazy">
+                                    <img src="/resources/image-1.jpg" onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-1" draggable="false" loading="lazy">
                                 </div>
                                 <div class="slide">
-                                    <img src="../resources/image-2.jpg" onerror="this.onerror=null;this.src='../resources/photo.svg';" alt="slide-2" draggable="false" loading="lazy">
+                                    <img src="/resources/image-2.jpg" onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-2" draggable="false" loading="lazy">
                                 </div>
                             </div>
                             <div class="carousel-btn-nav">
                                 <div class="btn-previous">
-                                    <img src="../resources/chevron-left-dark.svg" alt="previous" draggable="false" loading="lazy" />
+                                    <img src="/resources/chevron-left-dark.svg" alt="previous" draggable="false" loading="lazy" />
                                 </div>
                                 <div class="btn-next">
-                                    <img src="../resources/chevron-right-dark.svg" alt="next" draggable="false" loading="lazy" />
+                                    <img src="/resources/chevron-right-dark.svg" alt="next" draggable="false" loading="lazy" />
                                 </div>
                             </div>
                             <div class="pagination-dots">
@@ -223,11 +345,11 @@
                             </div>
                             <p class="name">Omah Darmo</p>
                             <div class="date">
-                                <img src="../resources/calendar.svg" alt="calendar" draggable="false" loading="lazy">
+                                <img src="/resources/calendar.svg" alt="calendar" draggable="false" loading="lazy">
                                 <p>Diposting: 22 Juni 2024</p>
                             </div>
                             <div class="location">
-                                <img src="../resources/map-dark.svg" alt="location" draggable="false" loading="lazy">
+                                <img src="/resources/map-dark.svg" alt="location" draggable="false" loading="lazy">
                                 <p>Panggungharjo, Sewon, Bantul</p>
                             </div>
                             <div class="desc-wrapper">
@@ -235,9 +357,9 @@
                                     <p class="price-wrapper">Rp700.000 - Rp750.000<span class="spesification">/bulan</span></p>
                                     <p class="note">*) Harga bisa saja berubah.</p>
                                 </div>
-                                <div class="btn-open" onclick="viewDetails(2);">
+                                <div class="btn-open" onclick="viewDetails(0);">
                                     <p>Lihat</p>
-                                    <img src="../resources/chevron-right-light.svg" alt="open" draggable="false" loading="lazy">
+                                    <img src="/resources/chevron-right-light.svg" alt="open" draggable="false" loading="lazy">
                                 </div>
                             </div>
                         </div>
@@ -268,8 +390,8 @@
     </div>
 
     <!-- Script -->
-    <script src="../js/public.js"></script>
-    <script src="../js/script_about.js"></script>
+    <script src="/js/public.js"></script>
+    <script src="/js/script_preview.js"></script>
 </body>
 
 </html>

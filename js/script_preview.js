@@ -305,7 +305,7 @@ function loadContent(dateData, nameData, categoriesData, imagesData, addressData
         img.loading = 'lazy';
         img.onerror = function () {
             this.onerror = null;
-            this.src = '../resources/photo.svg';
+            this.src = '/resources/photo.svg';
         };
 
         slide.appendChild(img);
@@ -351,7 +351,7 @@ function loadContent(dateData, nameData, categoriesData, imagesData, addressData
         categoryWrapper.className = 'category-wrapper';
 
         const categoryImg = document.createElement('img');
-        categoryImg.src = '../resources/home-dark.svg';
+        categoryImg.src = '/resources/home-dark.svg';
         categoryImg.alt = 'category';
         categoryImg.draggable = false;
         categoryImg.loading = 'lazy';
@@ -386,7 +386,7 @@ function loadContent(dateData, nameData, categoriesData, imagesData, addressData
         number.className = 'number';
         
         const numberImg = document.createElement('img');
-        numberImg.src = '../resources/brand-whatsapp.svg';
+        numberImg.src = '/resources/brand-whatsapp.svg';
         numberImg.alt = 'whatsapp';
         numberImg.draggable = false;
         numberImg.loading = 'lazy';
@@ -412,7 +412,7 @@ function loadContent(dateData, nameData, categoriesData, imagesData, addressData
         text.textContent = "Kirim Pesan";
         btnOpenWA.appendChild(text);
         const img = document.createElement("img");
-        img.src = "../resources/external-link.svg";
+        img.src = "/resources/external-link.svg";
         img.alt = "add-new";
         img.draggable = false;
         img.loading = "lazy";
