@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KONSI | Kost Kontrakan Sekitar ISI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.svg">
+    <!-- Style -->
+    <link rel="stylesheet" href="/css/public.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="navbar">
+        <div class="navbar-wrapper">
+            <a href="" class="brand-title">
+                <p>KONSI</p>
+                <p>Kost Kontrakan<br />Sekitar ISI</p>
+            </a>
+            <div class="actions">
+                <ul class="nav-links">
+                    <li class="active"><a href="">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <div class="search-box" onclick="setSearchVisibility();">
+                    <img src="/resources/search-grey.svg" alt="search" draggable="false" loading="lazy">
+                    <p class="placeholder">Cari nama kost atau kontrakan</p>
+                </div>
+                <div class="actions-wrapper">
+                    <div class="btn-filter" onclick="setFilterVisibility();">
+                        <img src="/resources/filter.svg" alt="filter" draggable="false" loading="lazy">
+                        <p class="badge">2</p>
+                    </div>
+                    <div class="toggle-menu" onclick="setToggleMenu();">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <span class="outer-click" onclick="setToggleMenu();"></span>
+                    <div class="sidebar-wrapper">
+                        <a href="" class="sdb-brand-title">
+                            <p>KONSI</p>
+                            <p>Kost Kontrakan<br />Sekitar ISI</p>
+                        </a>
+                        <div class="sdb-actions">
+                            <div class="sdb-search-box" onclick="setSearchVisibility();">
+                                <img src="/resources/search-grey.svg" alt="search" draggable="false" loading="lazy">
+                                <p class="sdb-placeholder">Cari nama kost atau kontrakan</p>
+                            </div>
+                            <p class="sdb-label">Navigasi</p>
+                            <ul class="sdb-nav-links">
+                                <li class="active">
+                                    <a href="">
+                                        <img src="/resources/home-light.svg" alt="home" draggable="false" loading="lazy">
+                                        <p>Beranda</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about.html">
+                                        <img src="/resources/info.svg" alt="about" draggable="false" loading="lazy">
+                                        <p>Tentang</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="faq.html">
+                                        <img src="/resources/message.svg" alt="faq" draggable="false" loading="lazy">
+                                        <p>FAQ</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sdb-invitation">
+                            <p class="sdb-hook">Punya info kost atau kontrakan lain?</p>
+                            <a href="create.html" class="sdb-btn-add-new">
+                                <img src="/resources/plus-blue.svg" alt="add-new" draggable="false" loading="lazy">
+                                <p>Tambahkan Sekarang</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Up -->
+    <div class="btn-scroll" onclick="scrollUp()">
+        <img src="/resources/chevrons-up.svg" alt="scroll-up" draggable="false" loading="lazy">
+    </div>
+
+    <!-- Content -->
+    <div class="cards">
+        <div class="cards-wrapper"></div>
+        <div class="view-more">
+            <div class="btn-previous">
+                <img src="/resources/chevron-left-dark.svg" alt="previous" draggable="false" loading="lazy" />
+            </div>
+            <p><span class="current-page">1</span>/<span class="total-page">1</span></p>
+            <div class="btn-next">
+                <img src="/resources/chevron-right-dark.svg" alt="next" draggable="false" loading="lazy" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-wrapper">
+            <a href="" class="brand-title">
+                <p>KONSI</p>
+                <p>Kost Kontrakan<br />Sekitar ISI</p>
+            </a>
+            <ul class="nav-links">
+                <li><a href="">Beranda</a></li>
+                <li>•</li>
+                <li><a href="about.html">Tentang</a></li>
+                <li>•</li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <div class="invitation">
+                <p class="hook">Punya info kost atau kontrakan lain?</p>
+                <a href="create.html" class="btn-add-new">
+                    <img src="/resources/plus-light.svg" alt="add-new" draggable="false" loading="lazy">
+                    <p>Tambahkan Sekarang</p>
+                </a>
+            </div>
+            <p class="copyright">©<span class="year">[Year]</span> KONSI. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search">
+        <span class="outer-color"></span>
+        <div class="search-wrapper">
+            <div class="search-box">
+                <div class="search-box-wrapper">
+                    <div class="search-box-input">
+                        <img src="/resources/search-grey.svg" alt="search" draggable="false" loading="lazy">
+                        <input type="text" placeholder="Cari nama kost atau kontrakan">
+                    </div>
+                    <div class="btn-close" onclick="setSearchVisibility();">
+                        <p>Batal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="search-cards">
+                <div class="search-cards-wrapper">
+                    <div class="card number-1">
+                        <div class="thumb">
+                            <div class="carousel">
+                                <div class="slide">
+                                    <img src="/resources/image-1.jpg"
+                                        onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-1"
+                                        draggable="false" loading="lazy">
+                                </div>
+                                <div class="slide">
+                                    <img src="/resources/image-2.jpg"
+                                        onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-2"
+                                        draggable="false" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-btn-nav">
+                                <div class="btn-previous">
+                                    <img src="/resources/chevron-left-dark.svg" alt="previous" draggable="false" loading="lazy" />
+                                </div>
+                                <div class="btn-next">
+                                    <img src="/resources/chevron-right-dark.svg" alt="next" draggable="false" loading="lazy" />
+                                </div>
+                            </div>
+                            <div class="pagination-dots">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <div class="categories">
+                                <span>Kost Putra</span>
+                                <span>Kosongan</span>
+                                <span>Isian</span>
+                            </div>
+                            <p class="name">Omah Darmo</p>
+                            <div class="date">
+                                <img src="/resources/calendar.svg" alt="calendar" draggable="false" loading="lazy">
+                                <p>Diposting: 22 Juni 2024</p>
+                            </div>
+                            <div class="location">
+                                <img src="/resources/map-dark.svg" alt="location" draggable="false" loading="lazy">
+                                <p>Panggungharjo, Sewon, Bantul</p>
+                            </div>
+                            <div class="desc-wrapper">
+                                <div class="price">
+                                    <p class="price-wrapper">Rp700.000 - Rp750.000<span class="period">/bulan</span></p>
+                                    <p class="note">*) Harga bisa saja berubah.</p>
+                                </div>
+                                <div class="btn-open" onclick="viewDetails(1);">
+                                    <p>Lihat</p>
+                                    <img src="/resources/chevron-right-light.svg" alt="open" draggable="false" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card number-2">
+                        <div class="thumb">
+                            <div class="carousel">
+                                <div class="slide">
+                                    <img src="/resources/image-1.jpg"
+                                        onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-1"
+                                        draggable="false" loading="lazy">
+                                </div>
+                                <div class="slide">
+                                    <img src="/resources/image-2.jpg"
+                                        onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-2"
+                                        draggable="false" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-btn-nav">
+                                <div class="btn-previous">
+                                    <img src="/resources/chevron-left-dark.svg" alt="previous" draggable="false" loading="lazy" />
+                                </div>
+                                <div class="btn-next">
+                                    <img src="/resources/chevron-right-dark.svg" alt="next" draggable="false" loading="lazy" />
+                                </div>
+                            </div>
+                            <div class="pagination-dots">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <div class="categories">
+                                <span>Kost Putra</span>
+                                <span>Kosongan</span>
+                                <span>Isian</span>
+                            </div>
+                            <p class="name">Omah Darmo</p>
+                            <div class="date">
+                                <img src="/resources/calendar.svg" alt="calendar" draggable="false" loading="lazy">
+                                <p>Diposting: 22 Juni 2024</p>
+                            </div>
+                            <div class="location">
+                                <img src="/resources/map-dark.svg" alt="location" draggable="false" loading="lazy">
+                                <p>Panggungharjo, Sewon, Bantul</p>
+                            </div>
+                            <div class="desc-wrapper">
+                                <div class="price">
+                                    <p class="price-wrapper">Rp700.000 - Rp750.000<span class="period">/bulan</span></p>
+                                    <p class="note">*) Harga bisa saja berubah.</p>
+                                </div>
+                                <div class="btn-open" onclick="viewDetails(2);">
+                                    <p>Lihat</p>
+                                    <img src="/resources/chevron-right-light.svg" alt="open" draggable="false" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter">
+        <span class="outer-color" onclick="setFilterVisibility();"></span>
+        <div class="filter-wrapper">
+            <p class="title">Filter Hunian</p>
+            <form  autocomplete="off">
+                <div class="form-group">
+                    <p class="label">Waktu Posting</p>
+                    <div class="times">
+                        <div class="time-group">
+                            <input type="checkbox" name="time" id="time1" value="Terbaru">
+                            <label for="time1">Terbaru</label>
+                        </div>
+                        <div class="time-group">
+                            <input type="checkbox" name="time" id="time2" value="Terlama">
+                            <label for="time2">Terlama</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p class="label">Kategori</p>
+                    <div class="categories">
+                        <div class="category-group">
+                            <input type="checkbox" name="category" id="category1" value="Kontrakan">
+                            <label for="category1">Kontrakan</label>
+                        </div>
+                        <div class="category-group">
+                            <input type="checkbox" name="category" id="category2" value="Kost Putra">
+                            <label for="category2">Kost Putra</label>
+                        </div>
+                        <div class="category-group">
+                            <input type="checkbox" name="category" id="category3" value="Kost Putri">
+                            <label for="category3">Kost Putri</label>
+                        </div>
+                        <div class="category-group">
+                            <input type="checkbox" name="category" id="category4" value="Kost Campur">
+                            <label for="category4">Kost Campur</label>
+                        </div>
+                        <div class="category-group">
+                            <input type="checkbox" name="category" id="category5" value="Kosongan">
+                            <label for="category5">Kosongan</label>
+                        </div>
+                        <div class="category-group">
+                            <input type="checkbox" name="category" id="category6" value="Isian">
+                            <label for="category6">Isian</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p class="label">Rentang Harga</p>
+                    <div class="prices">
+                        <div class="price-min">
+                            <p>Min.</p>
+                            <input type="number">
+                            <p class="input-value">Rp 0</p>
+                        </div>
+                        <span></span>
+                        <div class="price-max">
+                            <p>Maks.</p>
+                            <input type="number">
+                            <p class="input-value">Rp 0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <input type="reset" value="Reset Pengaturan">
+                    <input type="submit" value="Terapkan">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader active">
+        <div class="container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="/js/public.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

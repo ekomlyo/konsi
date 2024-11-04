@@ -1,0 +1,60 @@
+/*-- Navigation --*/
+
+/* Links */
+.navbar .navbar-wrapper .actions .nav-links {
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+/* Actions Wrapper */
+.navbar .navbar-wrapper .actions .actions-wrapper {
+    margin-left: 60px;
+}
+
+/* Toggle Menu */
+.navbar .navbar-wrapper .actions .actions-wrapper .toggle-menu {
+    display: none;
+}
+
+
+/*-- Content --*/
+
+/* FAQ */
+.faq {
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq .faq-wrapper {
+    width: 100%;
+    max-width: 752px;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+
+/*-- Responsive Breakpoint --*/
+
+@media screen and (max-width: 540px) {
+    /*-- Navigation --*/
+
+    /* Actions */
+    .navbar .navbar-wrapper .actions {
+        margin-left: 0;
+    }
+
+    /* Links */
+    .navbar .navbar-wrapper .actions .nav-links {
+        display: none;
+    }
+
+    /* Toggle Menu */
+    .navbar .navbar-wrapper .actions .actions-wrapper .toggle-menu {
+        display: flex;
+    }
+}
