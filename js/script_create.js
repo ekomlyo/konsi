@@ -544,3 +544,84 @@ btnCloseLoader.addEventListener('click', () => {
         loader.classList.remove('active');
     }, 300);
 });
+
+
+// Example of implementation of the update and deletion method
+
+// const queryEncoded = encodeURIComponent("kost");
+// const data = {};
+
+// fetch(`https://script.google.com/macros/s/AKfycbwBXVENPvilxHa6cCvqB6o9qquZ7__ZxdPNiQmXz5gdONR_U83CKWhVJ-QZJFnvBiy57A/exec?action=search&query=${queryEncoded}`, {
+//     method: 'POST',
+//     body: JSON.stringify(data)
+// })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data);
+//     })
+//     .catch(error => {
+//         console.error(error);
+//     });
+
+// const dataa = {
+//     "id": "2",
+//     "name": "Kost COBA GANTI",
+//     "categories": [
+//         "Kost Putra",
+//         "Isian"
+//     ],
+//     "images": [
+//         "https://ik.imagekit.io/ekomlyo/images/img_ka7LVp36M.jpg",
+//         "https://ik.imagekit.io/ekomlyo/images/img_CJahEh7qD.jpg",
+//         "https://ik.imagekit.io/ekomlyo/images/img_Ptc7NVVaG.jpg",
+//         "https://ik.imagekit.io/ekomlyo/images/img_lFA12FbS2.jpg",
+//         "https://ik.imagekit.io/ekomlyo/images/img_kBCA-1ZO2.jpg",
+//         "https://ik.imagekit.io/ekomlyo/images/img_w5eIGZ1nL.jpg"
+//     ],
+//     "address": "Sewon, Kec. Bantul, Kabupaten Bantul, Daerah Istimewa Yogyakarta.",
+//     "units": [
+//         {
+//             "name": "Perbulan",
+//             "price": "Rp 700.000",
+//             "period": "bulan"
+//         },
+//         {
+//             "name": "Per-3 bulan",
+//             "price": "Rp 650.000",
+//             "period": "bulan"
+//         },
+//         {
+//             "name": "Per-6 bulan",
+//             "price": "Rp 600.000",
+//             "period": "bulan"
+//         },
+//         {
+//             "name": "Pertahun",
+//             "price": "Rp 500.000",
+//             "period": "bulan"
+//         }
+//     ],
+//     "price_range": "Rp 500.000 - Rp 700.000",
+//     "facilities": "Fasilitas kamar all new:\n~ km dalam , closet duduk ,  shower \n~ Springbed \n~ Bantal + guling \n~ Sprei \n~ Lemari \n~ Meja + kursi \n~ Wall fan \n~ Gorden jendela\n~ Keset kamar mandi\n~ Keset wellcome\n~ Air galon + pompa\n~ Tempat sampah\n\nFasilitas luar kamar all new all free:\n# Dapur bersama\n# Perlengkapan masak\n# Kompor Rinnai + gas \n# Gula + Teh + Kopi\n# Mesin cuci\n# Jemuran baju\n# Wastafel cuci piring\n# Perlengkapan kebersihan (sapu+pel+serok sampah+tempat sampah+pembersih lantai) \n# Jam dinding\n# Rak piring, gelas, sendok\n# Kunci pagar bawa sendiri2",
+//     "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.9071969599345!2d110.34286527455572!3d-7.904763578662901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a555d2e0a2217%3A0x26e6558975d45179!2sKost%20ALIN%20JAYA%20Group!5e0!3m2!1sid!2sid!4v1729534033474!5m2!1sid!2sid",
+//     "contacts": [
+//         {
+//             "name": "Bu Evi",
+//             "number": "+62 896-1267-1234"
+//         }
+//     ]
+// };
+
+// // console.log(JSON.stringify(dataa))
+
+// fetch('https://script.google.com/macros/s/AKfycbwBXVENPvilxHa6cCvqB6o9qquZ7__ZxdPNiQmXz5gdONR_U83CKWhVJ-QZJFnvBiy57A/exec?action=delete', {
+//     method: 'POST',
+//     body: JSON.stringify(dataa)
+// })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data);
+//     })
+//     .catch(error => {
+//         console.error(error);
+//     });
