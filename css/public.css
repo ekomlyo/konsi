@@ -656,11 +656,11 @@ body {
     display: flex;
     justify-content: center;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     transition: all 0.3s ease-out;
 }
 
-.search .search-wrapper.active .search-box {
+.search .search-wrapper .search-box.active {
     transform: translateY(0);
 }
 
@@ -687,7 +687,7 @@ body {
     transition: all 0.3s ease-out 0.1s;
 }
 
-.search .search-wrapper.active .search-box .search-box-wrapper .search-box-input {
+.search .search-wrapper .search-box.active .search-box-wrapper .search-box-input {
     width: 100%;
     opacity: 1;
 }
@@ -718,27 +718,48 @@ select:focus {
     color: var(--grey-medium);
 }
 
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* SB Loader */
+.search .search-wrapper .search-box .search-box-wrapper .search-loader {
+    margin-left: 15px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.search .search-wrapper .search-box .search-box-wrapper .search-loader.active {
+    display: flex;
+}
+
 /* SB Btn Close */
 .search .search-wrapper .search-box .search-box-wrapper .btn-close {
     margin-left: 15px;
     opacity: 0;
-    transform: translateX(-100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateX(-100%) rotate(-180deg);
     transition: all 0.3s ease-out 0.2s;
     cursor: pointer;
 }
 
-.search .search-wrapper.active .search-box .search-box-wrapper .btn-close {
+.search .search-wrapper .search-box.active .search-box-wrapper .btn-close {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) rotate(0deg);
 }
 
-.search .search-wrapper .search-box .search-box-wrapper .btn-close p {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--white-basic);
+.search .search-wrapper .search-box .search-box-wrapper .search-loader.active~.btn-close {
+    display: none;
+}
+
+.search .search-wrapper .search-box .search-box-wrapper .btn-close img {
+    width: 20px;
+    height: 20px;
 }
 
 /* Search Cards */
@@ -748,6 +769,7 @@ select:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 }
 
 .search .search-wrapper .search-cards .search-cards-wrapper {
@@ -977,6 +999,44 @@ select:focus {
     margin-left: 4px;
 }
 
+/* Search Blank */
+.search .search-wrapper .search-blank {
+    width: 100%;
+    max-width: 346px;
+    padding: 40px 30px;
+    background-color: var(--overlay-light-1);
+    border: 2px dashed var(--overlay-light-2);
+    border-radius: 20px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    transition: all 0.3s ease-out;
+}
+
+.search .search-wrapper .search-blank.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.search .search-wrapper .search-blank img {
+    width: 64px;
+    height: 64px;
+}
+
+.search .search-wrapper .search-blank .desc {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--white-basic);
+    margin-top: 16px;
+}
+
 
 /*-- Responsive Breakpoint --*/
 
@@ -1007,220 +1067,4 @@ select:focus {
 
 .preloader.active {
     display: flex;
-}
-
-.preloader .container {
-    --uib-size: 45px;
-    --uib-color: var(--white-basic);
-    --uib-speed: 1.75s;
-    position: relative;
-    height: var(--uib-size);
-    width: var(--uib-size);
-    animation: rotate calc(var(--uib-speed) * 4) linear infinite;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.preloader .container .particle {
-    position: absolute;
-    top: 0%;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-
-.preloader .container .particle:nth-child(1) {
-    --uib-delay: 0;
-    transform: rotate(8deg);
-}
-
-.preloader .container .particle:nth-child(2) {
-    --uib-delay: -0.4;
-    transform: rotate(36deg);
-}
-
-.preloader .container .particle:nth-child(3) {
-    --uib-delay: -0.9;
-    transform: rotate(72deg);
-}
-
-.preloader .container .particle:nth-child(4) {
-    --uib-delay: -0.5;
-    transform: rotate(90deg);
-}
-
-.preloader .container .particle:nth-child(5) {
-    --uib-delay: -0.3;
-    transform: rotate(144deg);
-}
-
-.preloader .container .particle:nth-child(6) {
-    --uib-delay: -0.2;
-    transform: rotate(180deg);
-}
-
-.preloader .container .particle:nth-child(7) {
-    --uib-delay: -0.6;
-    transform: rotate(216deg);
-}
-
-.preloader .container .particle:nth-child(8) {
-    --uib-delay: -0.7;
-    transform: rotate(252deg);
-}
-
-.preloader .container .particle:nth-child(9) {
-    --uib-delay: -0.1;
-    transform: rotate(300deg);
-}
-
-.preloader .container .particle:nth-child(10) {
-    --uib-delay: -0.8;
-    transform: rotate(324deg);
-}
-
-.preloader .container .particle:nth-child(11) {
-    --uib-delay: -1.2;
-    transform: rotate(335deg);
-}
-
-.preloader .container .particle:nth-child(12) {
-    --uib-delay: -0.5;
-    transform: rotate(290deg);
-}
-
-.preloader .container .particle:nth-child(13) {
-    --uib-delay: -0.2;
-    transform: rotate(240deg);
-}
-
-.preloader .container .particle::before {
-    content: '';
-    position: absolute;
-    height: 17.5%;
-    width: 17.5%;
-    border-radius: 50%;
-    background-color: var(--uib-color);
-    flex-shrink: 0;
-    transition: background-color 0.3s ease;
-    --uib-d: calc(var(--uib-delay) * var(--uib-speed));
-    animation: orbit var(--uib-speed) linear var(--uib-d) infinite;
-}
-
-@keyframes orbit {
-    0% {
-        transform: translate(calc(var(--uib-size) * 0.5)) scale(0.73684);
-        opacity: 0.65;
-    }
-
-    5% {
-        transform: translate(calc(var(--uib-size) * 0.4)) scale(0.684208);
-        opacity: 0.58;
-    }
-
-    10% {
-        transform: translate(calc(var(--uib-size) * 0.3)) scale(0.631576);
-        opacity: 0.51;
-    }
-
-    15% {
-        transform: translate(calc(var(--uib-size) * 0.2)) scale(0.578944);
-        opacity: 0.44;
-    }
-
-    20% {
-        transform: translate(calc(var(--uib-size) * 0.1)) scale(0.526312);
-        opacity: 0.37;
-    }
-
-    25% {
-        transform: translate(0%) scale(0.47368);
-        opacity: 0.3;
-    }
-
-    30% {
-        transform: translate(calc(var(--uib-size) * -0.1)) scale(0.526312);
-        opacity: 0.37;
-    }
-
-    35% {
-        transform: translate(calc(var(--uib-size) * -0.2)) scale(0.578944);
-        opacity: 0.44;
-    }
-
-    40% {
-        transform: translate(calc(var(--uib-size) * -0.3)) scale(0.631576);
-        opacity: 0.51;
-    }
-
-    45% {
-        transform: translate(calc(var(--uib-size) * -0.4)) scale(0.684208);
-        opacity: 0.58;
-    }
-
-    50% {
-        transform: translate(calc(var(--uib-size) * -0.5)) scale(0.73684);
-        opacity: 0.65;
-    }
-
-    55% {
-        transform: translate(calc(var(--uib-size) * -0.4)) scale(0.789472);
-        opacity: 0.72;
-    }
-
-    60% {
-        transform: translate(calc(var(--uib-size) * -0.3)) scale(0.842104);
-        opacity: 0.79;
-    }
-
-    65% {
-        transform: translate(calc(var(--uib-size) * -0.2)) scale(0.894736);
-        opacity: 0.86;
-    }
-
-    70% {
-        transform: translate(calc(var(--uib-size) * -0.1)) scale(0.947368);
-        opacity: 0.93;
-    }
-
-    75% {
-        transform: translate(0%) scale(1);
-        opacity: 1;
-    }
-
-    80% {
-        transform: translate(calc(var(--uib-size) * 0.1)) scale(0.947368);
-        opacity: 0.93;
-    }
-
-    85% {
-        transform: translate(calc(var(--uib-size) * 0.2)) scale(0.894736);
-        opacity: 0.86;
-    }
-
-    90% {
-        transform: translate(calc(var(--uib-size) * 0.3)) scale(0.842104);
-        opacity: 0.79;
-    }
-
-    95% {
-        transform: translate(calc(var(--uib-size) * 0.4)) scale(0.789472);
-        opacity: 0.72;
-    }
-
-    100% {
-        transform: translate(calc(var(--uib-size) * 0.5)) scale(0.73684);
-        opacity: 0.65;
-    }
 }

@@ -13,7 +13,9 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -56,7 +58,8 @@
                             <ul class="sdb-nav-links">
                                 <li>
                                     <a href="index.html">
-                                        <img src="/resources/home-light.svg" alt="home" draggable="false" loading="lazy">
+                                        <img src="/resources/home-light.svg" alt="home" draggable="false"
+                                            loading="lazy">
                                         <p>Beranda</p>
                                     </a>
                                 </li>
@@ -132,142 +135,33 @@
                 <div class="search-box-wrapper">
                     <div class="search-box-input">
                         <img src="/resources/search-grey.svg" alt="search" draggable="false" loading="lazy">
-                        <input type="text" placeholder="Cari nama kost atau kontrakan">
+                        <input type="search" placeholder="Cari kost atau kontrakan">
+                    </div>
+                    <div class="search-loader">
+                        <l-ring size="20" stroke="2" bg-opacity="0" speed="2" color="var(--white-basic)"></l-ring>
                     </div>
                     <div class="btn-close" onclick="setSearchVisibility();">
-                        <p>Batal</p>
+                        <img src="/resources/x.svg" alt="close" draggable="false" loading="lazy">
                     </div>
                 </div>
             </div>
             <div class="search-cards">
-                <div class="search-cards-wrapper">
-                    <div class="card number-1">
-                        <div class="thumb">
-                            <div class="carousel">
-                                <div class="slide">
-                                    <img src="/resources/image-1.jpg" onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-1" draggable="false" loading="lazy">
-                                </div>
-                                <div class="slide">
-                                    <img src="/resources/image-2.jpg" onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-2" draggable="false" loading="lazy">
-                                </div>
-                            </div>
-                            <div class="carousel-btn-nav">
-                                <div class="btn-previous">
-                                    <img src="/resources/chevron-left-dark.svg" alt="previous" draggable="false" loading="lazy" />
-                                </div>
-                                <div class="btn-next">
-                                    <img src="/resources/chevron-right-dark.svg" alt="next" draggable="false" loading="lazy" />
-                                </div>
-                            </div>
-                            <div class="pagination-dots">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                        <div class="desc">
-                            <div class="categories">
-                                <span>Kost Putra</span>
-                                <span>Kosongan</span>
-                                <span>Isian</span>
-                            </div>
-                            <p class="name">Omah Darmo</p>
-                            <div class="date">
-                                <img src="/resources/calendar.svg" alt="calendar" draggable="false" loading="lazy">
-                                <p>Diposting: 22 Juni 2024</p>
-                            </div>
-                            <div class="location">
-                                <img src="/resources/map-dark.svg" alt="location" draggable="false" loading="lazy">
-                                <p>Panggungharjo, Sewon, Bantul</p>
-                            </div>
-                            <div class="desc-wrapper">
-                                <div class="price">
-                                    <p class="price-wrapper">Rp700.000 - Rp750.000<span class="spesification">/bulan</span></p>
-                                    <p class="note">*) Harga bisa saja berubah.</p>
-                                </div>
-                                <div class="btn-open" onclick="viewDetails(1);">
-                                    <p>Lihat</p>
-                                    <img src="/resources/chevron-right-light.svg" alt="open" draggable="false" loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card number-2">
-                        <div class="thumb">
-                            <div class="carousel">
-                                <div class="slide">
-                                    <img src="/resources/image-1.jpg" onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-1" draggable="false" loading="lazy">
-                                </div>
-                                <div class="slide">
-                                    <img src="/resources/image-2.jpg" onerror="this.onerror=null;this.src='/resources/photo.svg';" alt="slide-2" draggable="false" loading="lazy">
-                                </div>
-                            </div>
-                            <div class="carousel-btn-nav">
-                                <div class="btn-previous">
-                                    <img src="/resources/chevron-left-dark.svg" alt="previous" draggable="false" loading="lazy" />
-                                </div>
-                                <div class="btn-next">
-                                    <img src="/resources/chevron-right-dark.svg" alt="next" draggable="false" loading="lazy" />
-                                </div>
-                            </div>
-                            <div class="pagination-dots">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                        <div class="desc">
-                            <div class="categories">
-                                <span>Kost Putra</span>
-                                <span>Kosongan</span>
-                                <span>Isian</span>
-                            </div>
-                            <p class="name">Omah Darmo</p>
-                            <div class="date">
-                                <img src="/resources/calendar.svg" alt="calendar" draggable="false" loading="lazy">
-                                <p>Diposting: 22 Juni 2024</p>
-                            </div>
-                            <div class="location">
-                                <img src="/resources/map-dark.svg" alt="location" draggable="false" loading="lazy">
-                                <p>Panggungharjo, Sewon, Bantul</p>
-                            </div>
-                            <div class="desc-wrapper">
-                                <div class="price">
-                                    <p class="price-wrapper">Rp700.000 - Rp750.000<span class="spesification">/bulan</span></p>
-                                    <p class="note">*) Harga bisa saja berubah.</p>
-                                </div>
-                                <div class="btn-open" onclick="viewDetails(2);">
-                                    <p>Lihat</p>
-                                    <img src="/resources/chevron-right-light.svg" alt="open" draggable="false" loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                <div class="search-cards-wrapper"></div>
+            </div>
+            <div class="search-blank">
+                <img src="/resources/home-search.svg" alt="home-search" draggable="false" loading="lazy">
+                <p class="desc">Temukan Hunianmu</p>
             </div>
         </div>
     </div>
 
     <!-- Preloader -->
     <div class="preloader active">
-        <div class="container">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
+        <l-ring size="40" stroke="4" bg-opacity="0" speed="2" color="var(--white-basic)"></l-ring>
     </div>
 
     <!-- Script -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring.js"></script>
     <script src="/js/public.js"></script>
     <script src="/js/script_about.js"></script>
 </body>

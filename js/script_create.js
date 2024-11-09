@@ -375,12 +375,12 @@ form.addEventListener('submit', (e) => {
                 setLoaderVisibility('success');
                 form.reset();
 
-                // console.log(data);
+                console.log(data);
             })
             .catch(error => {
                 setLoaderVisibility('error');
 
-                // console.error(error);
+                console.error(error);
             });
 
         setLoaderVisibility('progress');
