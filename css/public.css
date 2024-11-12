@@ -947,6 +947,12 @@ select:focus {
     margin-left: 2px;
 }
 
+.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .location p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .search .search-wrapper .search-cards .search-cards-wrapper .card .desc .desc-wrapper {
     width: 100%;
     margin-top: 14px;
