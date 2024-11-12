@@ -337,7 +337,7 @@ function generateContact(contactName, contactNumber) {
                             </div>
                             <div class="contact-number-input">
                                 <label for="contactnumber">Nomor Kontak</label>
-                                <input type="number" name="contactnumber" id="contactnumber" placeholder="(Ketik nomor kontak)" value="${contactNumber}">
+                                <input type="tel" name="contactnumber" id="contactnumber" placeholder="(Ketik nomor kontak)" value="${contactNumber}">
                             </div>
                             <div class="btn-delete-contact" onclick="deleteContact(this)">
                                 <img src="/resources/trash-x.svg" alt="delete-contact" draggable="false" loading="lazy">
