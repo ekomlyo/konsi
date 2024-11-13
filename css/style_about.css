@@ -1,19 +1,8 @@
 /*-- Navigation --*/
 
-/* Links */
-.navbar .navbar-wrapper .actions .nav-links {
-    justify-content: flex-end;
-    gap: 30px;
-}
-
 /* Actions Wrapper */
 .navbar .navbar-wrapper .actions .actions-wrapper {
-    margin-left: 60px;
-}
-
-/* Toggle Menu */
-.navbar .navbar-wrapper .actions .actions-wrapper .toggle-menu {
-    display: none;
+    margin-left: 64px;
 }
 
 
@@ -40,7 +29,7 @@
 
 /*-- Responsive Breakpoint --*/
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 586px) {
     /*-- Navigation --*/
 
     /* Actions */

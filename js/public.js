@@ -60,10 +60,10 @@ document.querySelector('.copyright .year').innerHTML = date.getFullYear();
 
 
 // Create Card
-function createCard(id, dateData, nameData, categoriesData, imagesData, addressData, priceRangeData) {
+function createCard(index, idData, dateData, nameData, categoriesData, imagesData, addressData, priceRangeData) {
     // Create the card div
     const card = document.createElement('div');
-    card.className = `card number-${id}`;
+    card.className = `card number-${index}`;
 
     // Create the thumb div
     const thumb = document.createElement('div');
@@ -207,7 +207,7 @@ function createCard(id, dateData, nameData, categoriesData, imagesData, addressD
     const btnOpen = document.createElement('div');
     btnOpen.className = 'btn-open';
     btnOpen.onclick = function () {
-        viewDetails(id);
+        viewDetails(idData);
     };
 
     const btnText = document.createElement('p');
@@ -240,6 +240,7 @@ function viewDetails(id) {
 const search = document.querySelector('.search');
 const searchOuterColor = search.querySelector('.outer-color');
 const searchBox = search.querySelector('.search-wrapper .search-box');
+const searchCards = search.querySelector('.search-wrapper .search-cards');
 const searchBlank = search.querySelector('.search-wrapper .search-blank');
 const searchBoxInput = search.querySelector('.search-box-input input');
 const searchCardsWrapper = search.querySelector('.search-cards .search-cards-wrapper');
@@ -253,6 +254,7 @@ function setSearchVisibility() {
             searchBoxInput.disabled = true;
             searchOuterColor.classList.remove('active');
             searchBox.classList.remove('active');
+            searchCards.classList.remove('active');
             searchBlank.classList.remove('active');
             setTimeout(() => {
                 search.classList.remove('active');
@@ -273,6 +275,7 @@ function setSearchVisibility() {
             setTimeout(() => {
                 searchOuterColor.classList.add('active');
                 searchBox.classList.add('active');
+                searchCards.classList.add('active');
                 searchBlank.classList.add('active');
                 setTimeout(() => {
                     searchBoxInput.focus();
@@ -289,11 +292,11 @@ function setSearchImageSlider() {
     const searchCards = document.querySelectorAll('.search-cards-wrapper .card');
 
     searchCards.forEach((card, index) => {
-        const carousel = document.querySelector(`.search-cards-wrapper .number-${index + 1} .thumb .carousel`),
+        const carousel = document.querySelector(`.search-cards-wrapper .number-${index} .thumb .carousel`),
             slides = carousel.querySelectorAll('.slide'),
-            dots = document.querySelectorAll(`.search-cards-wrapper .number-${index + 1} .thumb .pagination-dots .dot`),
-            btnPrevious = document.querySelector(`.search-cards-wrapper .number-${index + 1} .thumb .carousel-btn-nav .btn-previous`),
-            btnNext = document.querySelector(`.search-cards-wrapper .number-${index + 1} .thumb .carousel-btn-nav .btn-next`);
+            dots = document.querySelectorAll(`.search-cards-wrapper .number-${index} .thumb .pagination-dots .dot`),
+            btnPrevious = document.querySelector(`.search-cards-wrapper .number-${index} .thumb .carousel-btn-nav .btn-previous`),
+            btnNext = document.querySelector(`.search-cards-wrapper .number-${index} .thumb .carousel-btn-nav .btn-next`);
 
         let isDragStart = false, isDragging = false, isScrolling = false, prevPageX, prevScrollLeft, positionDiff;
 
@@ -429,7 +432,7 @@ function handleSearch() {
             searchCardsWrapper.innerHTML = '';
 
             if (data.data) {
-                data.data.forEach(item => {
+                data.data.forEach((item, index) => {
                     // parsing data
                     const id = item.id;
                     const date = item.date;
@@ -440,7 +443,7 @@ function handleSearch() {
                     const priceRange = item.price_range;
 
                     // create new card
-                    const newCard = createCard(id, date, name, categories, images, address, priceRange);
+                    const newCard = createCard(index, id, date, name, categories, images, address, priceRange);
 
                     // append the new card to the search cards wrapper
                     searchCardsWrapper.appendChild(newCard);

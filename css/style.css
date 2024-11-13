@@ -11,7 +11,7 @@
 
 .cards .cards-wrapper {
     width: 100%;
-    max-width: 752px;
+    max-width: 1118px;
     padding: 10px;
     display: flex;
     justify-content: flex-start;
@@ -529,7 +529,16 @@
 
 /*-- Responsive Breakpoint --*/
 
-@media screen and (max-width: 752px) {
+@media screen and (max-width: 1138px) {
+    /*-- Content --*/
+
+    /* Cards */
+    .cards .cards-wrapper {
+        max-width: 752px;
+    }
+}
+
+@media screen and (max-width: 772px) {
     /*-- Navigation --*/
 
     /* Links */
@@ -550,13 +559,18 @@
 
     /*-- Content --*/
 
+    /* Cards */
+    .cards .cards-wrapper {
+        max-width: 386px;
+    }
+
     /* Thumbnail */
     .cards .cards-wrapper .card .thumb .carousel-btn-nav {
         display: none;
     }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 586px) {
     /*-- Navigation --*/
 
     /* Brand Title */
@@ -567,5 +581,10 @@
     /* Actions */
     .navbar .navbar-wrapper .actions {
         margin-left: 0;
+    }
+
+    /* Search Box */
+    .navbar .navbar-wrapper .actions .search-box {
+        max-width: 100%;
     }
 }

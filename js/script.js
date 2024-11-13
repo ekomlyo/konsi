@@ -110,11 +110,11 @@ function setImageSlider() {
     const cards = document.querySelectorAll('.cards-wrapper .card');
 
     cards.forEach((card, index) => {
-        const carousel = document.querySelector(`.cards-wrapper .number-${index + 1} .thumb .carousel`),
+        const carousel = document.querySelector(`.cards-wrapper .number-${index} .thumb .carousel`),
             slides = carousel.querySelectorAll('.slide'),
-            dots = document.querySelectorAll(`.cards-wrapper .number-${index + 1} .thumb .pagination-dots .dot`),
-            btnPrevious = document.querySelector(`.cards-wrapper .number-${index + 1} .thumb .carousel-btn-nav .btn-previous`),
-            btnNext = document.querySelector(`.cards-wrapper .number-${index + 1} .thumb .carousel-btn-nav .btn-next`);
+            dots = document.querySelectorAll(`.cards-wrapper .number-${index} .thumb .pagination-dots .dot`),
+            btnPrevious = document.querySelector(`.cards-wrapper .number-${index} .thumb .carousel-btn-nav .btn-previous`),
+            btnNext = document.querySelector(`.cards-wrapper .number-${index} .thumb .carousel-btn-nav .btn-next`);
 
         let isDragStart = false, isDragging = false, isScrolling = false, prevPageX, prevScrollLeft, positionDiff;
 
@@ -234,7 +234,7 @@ function setImageSlider() {
 fetch('https://script.google.com/macros/s/AKfycbwBXVENPvilxHa6cCvqB6o9qquZ7__ZxdPNiQmXz5gdONR_U83CKWhVJ-QZJFnvBiy57A/exec')
     .then(response => response.json())
     .then(data => {
-        data.data.forEach(item => {
+        data.data.forEach((item, index) => {
             // parsing data
             const id = item.id;
             const date = item.date;
@@ -245,7 +245,7 @@ fetch('https://script.google.com/macros/s/AKfycbwBXVENPvilxHa6cCvqB6o9qquZ7__Zxd
             const priceRange = item.price_range;
 
             // create new card
-            const newCard = createCard(id, date, name, categories, images, address, priceRange);
+            const newCard = createCard(index, id, date, name, categories, images, address, priceRange);
 
             // append the new card to the cards wrapper
             const cardsWrapper = document.querySelector('.cards .cards-wrapper');
