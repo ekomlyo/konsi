@@ -378,7 +378,7 @@
     align-items: center;
 }
 
-.filter .filter-wrapper form .form-group .times .time-group input[type=checkbox],
+.filter .filter-wrapper form .form-group .times .time-group input[type=radio],
 .filter .filter-wrapper form .form-group .categories .category-group input[type=checkbox] {
     display: none;
 }
@@ -395,7 +395,7 @@
     cursor: pointer;
 }
 
-.filter .filter-wrapper form .form-group .times .time-group input[type=checkbox]:checked~label,
+.filter .filter-wrapper form .form-group .times .time-group input[type=radio]:checked~label,
 .filter .filter-wrapper form .form-group .categories .category-group input[type=checkbox]:checked~label {
     color: var(--blue-high);
     background-color: var(--blue-thin);

@@ -1,110 +1,3 @@
-// Filter
-const filter = document.querySelector('.filter');
-const filterOuterColor = document.querySelector('.filter .outer-color');
-const filterWrapper = document.querySelector('.filter .filter-wrapper');
-let animFilterIsRunning = false;
-
-function setFilterVisibility() {
-    if (!animFilterIsRunning) {
-        animFilterIsRunning = true;
-
-        if (filter.classList.contains('active')) {
-            filterOuterColor.classList.toggle('active');
-            filterWrapper.classList.toggle('active');
-            setTimeout(() => {
-                filter.classList.toggle('active');
-                animFilterIsRunning = false;
-            }, 300);
-        } else {
-            filter.classList.toggle('active');
-            setTimeout(() => {
-                filterOuterColor.classList.toggle('active');
-                filterWrapper.classList.toggle('active');
-                setTimeout(() => {
-                    animFilterIsRunning = false;
-                }, 300);
-            }, 0);
-        }
-    }
-};
-
-
-// Price Format
-const priceMin = document.querySelector('.price-min input');
-const priceMax = document.querySelector('.price-max input');
-const inputValueMin = document.querySelector('.price-min .input-value');
-const inputValueMax = document.querySelector('.price-max .input-value');
-
-// Min
-priceMin.addEventListener('input', () => {
-    if (priceMin.value < 10000000) {
-        inputValueMin.textContent = new Intl.NumberFormat("id", {
-            style: "currency",
-            currency: "IDR",
-            maximumFractionDigits: 0,
-        }).format(priceMin.value || 0);
-    } else {
-        priceMin.value = inputValueMin.textContent.replace('Rp', '').replaceAll('.', '').trim();
-    }
-});
-
-priceMin.addEventListener('focus', () => {
-    if (priceMin.value == '') {
-        setTimeout(() => {
-            priceMin.value = inputValueMin.textContent.replace('Rp', '').replaceAll('.', '').trim();
-        }, 0);
-    }
-});
-
-priceMin.addEventListener('blur', () => {
-    priceMin.value = '';
-});
-
-// Max
-priceMax.addEventListener('input', () => {
-    if (priceMax.value < 10000000) {
-        inputValueMax.textContent = new Intl.NumberFormat("id", {
-            style: "currency",
-            currency: "IDR",
-            maximumFractionDigits: 0,
-        }).format(priceMax.value || 0);
-    } else {
-        priceMax.value = inputValueMax.textContent.replace('Rp', '').replaceAll('.', '').trim();
-    }
-});
-
-priceMax.addEventListener('focus', () => {
-    if (priceMax.value == '') {
-        setTimeout(() => {
-            priceMax.value = inputValueMax.textContent.replace('Rp', '').replaceAll('.', '').trim();
-        }, 0);
-    }
-});
-
-priceMax.addEventListener('blur', () => {
-    priceMax.value = '';
-});
-
-
-// Form Actions
-const form = document.querySelector('form');
-
-form.addEventListener('reset', () => {
-    resetPriceValue();
-});
-
-function resetPriceValue() {
-    inputValueMin.textContent = 'Rp 0';
-    inputValueMax.textContent = 'Rp 0';
-}
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    setFilterVisibility();
-});
-
-
 // Cards Thumbnail - Image Slider
 function setImageSlider() {
     const cards = document.querySelectorAll('.cards-wrapper .card');
@@ -230,36 +123,197 @@ function setImageSlider() {
 }
 
 
-// Get Data
-fetch('https://script.google.com/macros/s/AKfycbwBXVENPvilxHa6cCvqB6o9qquZ7__ZxdPNiQmXz5gdONR_U83CKWhVJ-QZJFnvBiy57A/exec')
-    .then(response => response.json())
-    .then(data => {
-        data.data.forEach((item, index) => {
-            // parsing data
-            const id = item.id;
-            const date = item.date;
-            const name = item.name;
-            const categories = item.categories;
-            const images = item.images;
-            const address = item.address;
-            const priceRange = item.price_range;
+// Filter Visibility
+const filter = document.querySelector('.filter');
+const filterOuterColor = document.querySelector('.filter .outer-color');
+const filterWrapper = document.querySelector('.filter .filter-wrapper');
+let animFilterIsRunning = false;
 
-            // create new card
-            const newCard = createCard(index, id, date, name, categories, images, address, priceRange);
+function setFilterVisibility() {
+    if (!animFilterIsRunning) {
+        animFilterIsRunning = true;
 
-            // append the new card to the cards wrapper
-            const cardsWrapper = document.querySelector('.cards .cards-wrapper');
-            cardsWrapper.appendChild(newCard);
-        });
+        if (filter.classList.contains('active')) {
+            filterOuterColor.classList.toggle('active');
+            filterWrapper.classList.toggle('active');
+            setTimeout(() => {
+                filter.classList.toggle('active');
+                animFilterIsRunning = false;
+            }, 300);
+        } else {
+            filter.classList.toggle('active');
+            setTimeout(() => {
+                filterOuterColor.classList.toggle('active');
+                filterWrapper.classList.toggle('active');
+                setTimeout(() => {
+                    animFilterIsRunning = false;
+                }, 300);
+            }, 0);
+        }
+    }
+};
 
-        console.log(data);
-    })
-    .catch(error => {
-        console.error(error);
-    })
-    .finally(() => {
-        // setup image slider
-        setImageSlider();
-        // hide preloader
-        hidePreloader();
+
+// Price Format
+const priceMin = document.querySelector('.price-min input');
+const priceMax = document.querySelector('.price-max input');
+const inputValueMin = document.querySelector('.price-min .input-value');
+const inputValueMax = document.querySelector('.price-max .input-value');
+
+// Min
+priceMin.addEventListener('input', () => {
+    if (priceMin.value < 10000000) {
+        inputValueMin.textContent = new Intl.NumberFormat("id", {
+            style: "currency",
+            currency: "IDR",
+            maximumFractionDigits: 0,
+        }).format(priceMin.value || 0);
+    } else {
+        priceMin.value = inputValueMin.textContent.replace('Rp', '').replaceAll('.', '').trim();
+    }
+});
+
+priceMin.addEventListener('focus', () => {
+    if (priceMin.value == '') {
+        setTimeout(() => {
+            priceMin.value = inputValueMin.textContent.replace('Rp', '').replaceAll('.', '').trim();
+        }, 0);
+    }
+});
+
+priceMin.addEventListener('blur', () => {
+    priceMin.value = '';
+});
+
+// Max
+priceMax.addEventListener('input', () => {
+    if (priceMax.value < 10000000) {
+        inputValueMax.textContent = new Intl.NumberFormat("id", {
+            style: "currency",
+            currency: "IDR",
+            maximumFractionDigits: 0,
+        }).format(priceMax.value || 0);
+    } else {
+        priceMax.value = inputValueMax.textContent.replace('Rp', '').replaceAll('.', '').trim();
+    }
+});
+
+priceMax.addEventListener('focus', () => {
+    if (priceMax.value == '') {
+        setTimeout(() => {
+            priceMax.value = inputValueMax.textContent.replace('Rp', '').replaceAll('.', '').trim();
+        }, 0);
+    }
+});
+
+priceMax.addEventListener('blur', () => {
+    priceMax.value = '';
+});
+
+
+// Form Actions
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const time = getTimeFilter();
+    const categories = getCategoriesFilter();
+    const priceRange = getPriceRangeFilter();
+
+    handleFilter(time, categories, priceRange);
+    setFilterVisibility();
+
+    // show preloader
+    showPreloader();
+});
+
+form.addEventListener('reset', () => {
+    resetPriceValue();
+});
+
+function getTimeFilter() {
+    const time = document.querySelector('.form-group .times .time-group input[type=radio]:checked');
+
+    return time.value == 'Terbaru' ? 'latest' : 'longest';
+}
+
+function getCategoriesFilter() {
+    const categories = form.querySelectorAll('.form-group .categories .category-group input[type=checkbox]:checked');
+    let data = [];
+
+    categories.forEach(category => {
+        data.push(category.value);
     });
+
+    return data;
+}
+
+function getPriceRangeFilter() {
+    const minValue = parseInt(inputValueMin.textContent.replace('Rp', '').replaceAll('.', '').trim());
+    const maxValue = parseInt(inputValueMax.textContent.replace('Rp', '').replaceAll('.', '').trim());
+
+    return { min: minValue, max: maxValue };
+}
+
+function resetPriceValue() {
+    inputValueMin.textContent = 'Rp 0';
+    inputValueMax.textContent = 'Rp 0';
+}
+
+
+// FIlter Handler
+function handleFilter(timeData, categoriesData, priceRangeData) {
+    const request = {
+        time: timeData,
+        categories: categoriesData,
+        priceRange: priceRangeData
+    };
+
+    fetch('https://script.google.com/macros/s/AKfycbzs7UKtNeiDGxEtIw-Ia5EBvR3Q-ZyeplY4v2EVKD1D_VEEwhiqRXeyWZwhzzBEMqILMA/exec?action=read', {
+        method: 'POST',
+        body: JSON.stringify(request)
+    })
+        .then(response => response.json())
+        .then(data => {
+            // clear the cards wrapper content
+            const cardsWrapper = document.querySelector('.cards .cards-wrapper');
+            cardsWrapper.innerHTML = '';
+
+            if (data.data) {
+                data.data.forEach((item, index) => {
+                    // parsing data
+                    const id = item.id;
+                    const date = item.date;
+                    const name = item.name;
+                    const categories = item.categories;
+                    const images = item.images;
+                    const address = item.address;
+                    const priceRange = item.priceRange;
+
+                    // create new card
+                    const newCard = createCard(index, id, date, name, categories, images, address, priceRange);
+
+                    // append the new card to the cards wrapper
+                    cardsWrapper.appendChild(newCard);
+                });
+            } else {
+                cardsWrapper.innerHTML = 'Tidak ada data.';
+            }
+
+            console.log(data);
+        })
+        .catch(error => {
+            console.error(error);
+        })
+        .finally(() => {
+            // setup image slider
+            setImageSlider();
+            // hide preloader
+            hidePreloader();
+        });
+}
+
+
+// Initialize
+handleFilter();

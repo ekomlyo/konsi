@@ -1,6 +1,10 @@
 // Preloader
+function showPreloader() {
+    document.querySelector('.preloader').classList.add('active');
+}
+
 function hidePreloader() {
-    document.querySelector('.preloader').classList.toggle('active');
+    document.querySelector('.preloader').classList.remove('active');
 }
 
 
@@ -422,7 +426,7 @@ function handleSearch() {
     const encodedQuery = searchBoxInput.value.trim();
     const data = { query: encodedQuery };
 
-    fetch('https://script.google.com/macros/s/AKfycbwBXVENPvilxHa6cCvqB6o9qquZ7__ZxdPNiQmXz5gdONR_U83CKWhVJ-QZJFnvBiy57A/exec?action=search', {
+    fetch('https://script.google.com/macros/s/AKfycbzs7UKtNeiDGxEtIw-Ia5EBvR3Q-ZyeplY4v2EVKD1D_VEEwhiqRXeyWZwhzzBEMqILMA/exec?action=search', {
         method: 'POST',
         body: JSON.stringify(data)
     })
@@ -440,7 +444,7 @@ function handleSearch() {
                     const categories = item.categories;
                     const images = item.images;
                     const address = item.address;
-                    const priceRange = item.price_range;
+                    const priceRange = item.priceRange;
 
                     // create new card
                     const newCard = createCard(index, id, date, name, categories, images, address, priceRange);

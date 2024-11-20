@@ -366,7 +366,7 @@ form.addEventListener('submit', (e) => {
     const formData = getFormData();
 
     if (formData) {
-        fetch('https://script.google.com/macros/s/AKfycbwBXVENPvilxHa6cCvqB6o9qquZ7__ZxdPNiQmXz5gdONR_U83CKWhVJ-QZJFnvBiy57A/exec?action=create', {
+        fetch('https://script.google.com/macros/s/AKfycbzs7UKtNeiDGxEtIw-Ia5EBvR3Q-ZyeplY4v2EVKD1D_VEEwhiqRXeyWZwhzzBEMqILMA/exec?action=create', {
             method: 'POST',
             body: JSON.stringify(formData)
         })
@@ -387,18 +387,24 @@ form.addEventListener('submit', (e) => {
     }
 });
 
+form.addEventListener('reset', () => {
+    resetImageData();
+    resetUnits();
+    resetContacts()
+});
+
 function getFormData() {
     if (form.querySelector('.form-group #name').value.trim().length > 0) {
-        if (getContacts().length > 0) {
+        if (getContactsData().length > 0) {
             const data = {
                 name: form.querySelector('.form-group #name').value,
-                categories: getCategories(),
+                categories: getCategoriesData(),
                 images: imageData,
                 address: form.querySelector('.form-group #address').value,
-                units: getUnits(),
-                facilities: form.querySelector('.form-group #facilities').value,
+                units: getUnitsData(),
+                desc: form.querySelector('.form-group #facilities').value,
                 maps: form.querySelector('.form-group #maps').value,
-                contacts: getContacts()
+                contacts: getContactsData()
             };
 
             return data;
@@ -412,7 +418,7 @@ function getFormData() {
     return false;
 }
 
-function getCategories() {
+function getCategoriesData() {
     const categories = form.querySelectorAll('.form-group .categories .category-group input[type=checkbox]:checked');
     let data = [];
 
@@ -423,7 +429,7 @@ function getCategories() {
     return data;
 }
 
-function getUnits() {
+function getUnitsData() {
     const units = form.querySelectorAll('.form-group .units .unit-group');
     let data = [];
 
@@ -446,7 +452,7 @@ function getUnits() {
     return data;
 }
 
-function getContacts() {
+function getContactsData() {
     const contacts = form.querySelectorAll('.form-group .contacts .contact-group');
     let data = [];
 
@@ -466,12 +472,6 @@ function getContacts() {
 
     return data;
 }
-
-form.addEventListener('reset', () => {
-    resetImageData();
-    resetUnits();
-    resetContacts()
-});
 
 
 // Loader
