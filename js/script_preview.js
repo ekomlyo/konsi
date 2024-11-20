@@ -425,9 +425,12 @@ function loadContent(dateData, nameData, categoriesData, imagesData, addressData
 
 // Get Data
 const urlParams = new URLSearchParams(window.location.search);
-const dataId = urlParams.get('id');
+const request = { id: urlParams.get('id') };
 
-fetch(`https://script.google.com/macros/s/AKfycbwBXVENPvilxHa6cCvqB6o9qquZ7__ZxdPNiQmXz5gdONR_U83CKWhVJ-QZJFnvBiy57A/exec?id=${dataId}`)
+fetch('https://script.google.com/macros/s/AKfycbzs7UKtNeiDGxEtIw-Ia5EBvR3Q-ZyeplY4v2EVKD1D_VEEwhiqRXeyWZwhzzBEMqILMA/exec?action=read', {
+    method: 'POST',
+    body: JSON.stringify(request)
+})
     .then(response => response.json())
     .then(data => {
         // parsing data
@@ -437,7 +440,7 @@ fetch(`https://script.google.com/macros/s/AKfycbwBXVENPvilxHa6cCvqB6o9qquZ7__Zxd
         const images = data.data[0].images;
         const address = data.data[0].address;
         const units = data.data[0].units;
-        const facilities = data.data[0].facilities;
+        const facilities = data.data[0].desc;
         const maps = data.data[0].maps;
         const contacts = data.data[0].contacts;
 
