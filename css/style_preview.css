@@ -585,6 +585,36 @@
 
 /*-- Responsive Breakpoint --*/
 
+@media screen and (max-width: 784px) {
+    /*-- ShortCut --*/
+
+    /* ShortCut Links */
+    .navbar .shortcut .shortcut-links {
+        max-width: calc(100% - 20px);
+    }
+
+
+    /*-- Content --*/
+
+    /* Preview */
+    .preview .preview-wrapper {
+        max-width: 100%;
+    }
+
+    /* Descriptions */
+    .preview .preview-wrapper .desc {
+        border-radius: 0;
+    }
+
+    /* Public */
+    .preview .preview-wrapper .units,
+    .preview .preview-wrapper .facilities,
+    .preview .preview-wrapper .maps,
+    .preview .preview-wrapper .contacts {
+        border-radius: 0;
+    }
+}
+
 @media screen and (max-width: 586px) {
     /*-- Navigation --*/
 
