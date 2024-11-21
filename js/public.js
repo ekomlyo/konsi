@@ -324,7 +324,9 @@ function setSearchImageSlider() {
         const showHideIcons = () => {
             // showing and hiding prev/next icon according to currentPage_tb value
             btnPrevious.style.opacity = dots[0].classList.contains('active') ? "0.5" : "1";
+            btnPrevious.style.cursor = dots[0].classList.contains('active') ? "not-allowed" : "pointer";
             btnNext.style.opacity = dots[dots.length - 1].classList.contains('active') ? "0.5" : "1";
+            btnNext.style.cursor = dots[dots.length - 1].classList.contains('active') ? "not-allowed" : "pointer";
         }
 
         btnPrevious.addEventListener("click", () => {

@@ -12,7 +12,9 @@ function setImageSlider_tb() {
     const showHideIcons_tb = () => {
         // showing and hiding prev/next icon according to currentPage_tb value
         btnPrevious_tb.style.opacity = currentPage_tb.textContent == '1' ? "0.5" : "1";
+        btnPrevious_tb.style.cursor = currentPage_tb.textContent == '1' ? "not-allowed" : "pointer";
         btnNext_tb.style.opacity = currentPage_tb.textContent == totalPage_tb.textContent ? "0.5" : "1";
+        btnNext_tb.style.cursor = currentPage_tb.textContent == totalPage_tb.textContent ? "not-allowed" : "pointer";
     }
 
     btnPrevious_tb.addEventListener("click", () => {
@@ -181,7 +183,9 @@ function setImageSlider_gl() {
     const showHideIcons_gl = () => {
         // showing and hiding prev/next icon according to currentPage_gl value
         btnPrevious_gl.style.opacity = currentPage_gl.textContent == '1' ? "0.5" : "1";
+        btnPrevious_gl.style.cursor = currentPage_gl.textContent == '1' ? "not-allowed" : "pointer";
         btnNext_gl.style.opacity = currentPage_gl.textContent == totalPage_gl.textContent ? "0.5" : "1";
+        btnNext_gl.style.cursor = currentPage_gl.textContent == totalPage_gl.textContent ? "not-allowed" : "pointer";
     }
 
     btnPrevious_gl.addEventListener("click", () => {
