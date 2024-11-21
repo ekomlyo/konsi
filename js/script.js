@@ -134,17 +134,20 @@ function setFilterVisibility() {
         animFilterIsRunning = true;
 
         if (filter.classList.contains('active')) {
-            filterOuterColor.classList.toggle('active');
-            filterWrapper.classList.toggle('active');
+            filterOuterColor.classList.remove('active');
+            filterWrapper.classList.remove('active');
             setTimeout(() => {
-                filter.classList.toggle('active');
+                filter.classList.remove('active');
                 animFilterIsRunning = false;
             }, 300);
         } else {
-            filter.classList.toggle('active');
+            // restore last filter preferences
+            loadFilterPreferences();
+
+            filter.classList.add('active');
             setTimeout(() => {
-                filterOuterColor.classList.toggle('active');
-                filterWrapper.classList.toggle('active');
+                filterOuterColor.classList.add('active');
+                filterWrapper.classList.add('active');
                 setTimeout(() => {
                     animFilterIsRunning = false;
                 }, 300);
@@ -224,6 +227,9 @@ form.addEventListener('submit', (e) => {
     handleFilter(time, categories, priceRange);
     setFilterVisibility();
 
+    // save filter preferences
+    saveFilterPreferences();
+
     // show preloader
     showPreloader();
 });
@@ -262,7 +268,56 @@ function resetPriceValue() {
 }
 
 
-// FIlter Handler
+// Filter Preferences
+let filterPreferences = {
+    time: 'latest',
+    categories: [],
+    priceRange: { min: 0, max: 0 }
+};
+
+function saveFilterPreferences() {
+    filterPreferences.time = getTimeFilter();
+    filterPreferences.categories = getCategoriesFilter();
+    filterPreferences.priceRange = getPriceRangeFilter();
+}
+
+function loadFilterPreferences() {
+    // Times
+    const times = document.querySelectorAll('.form-group .times .time-group input[type=radio]');
+    const timePreference = filterPreferences.time;
+
+    times.forEach(time => {
+        time.checked =
+            (timePreference === 'latest' && time.value === 'Terbaru') ||
+            (timePreference === 'longest' && time.value === 'Terlama');
+    });
+
+    // Categories
+    const categories = form.querySelectorAll('.form-group .categories .category-group input[type=checkbox]');
+    const categoriesPreferences = filterPreferences.categories;
+
+    categories.forEach(category => {
+        category.checked = categoriesPreferences.includes(category.value);
+    });
+
+    // Price Range
+    const priceRangePreferences = filterPreferences.priceRange;
+
+    inputValueMin.textContent = new Intl.NumberFormat("id", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0,
+    }).format(priceRangePreferences.min || 0);
+
+    inputValueMax.textContent = new Intl.NumberFormat("id", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0,
+    }).format(priceRangePreferences.max || 0);
+}
+
+
+// Filter Handler
 function handleFilter(timeData, categoriesData, priceRangeData) {
     const request = {
         time: timeData,
