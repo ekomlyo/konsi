@@ -926,6 +926,7 @@ select:focus {
     padding: 6px 10px;
     background-color: var(--blue-thin);
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .search .search-wrapper .search-cards .search-cards-wrapper .card .details .name {

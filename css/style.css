@@ -154,6 +154,7 @@
     padding: 6px 10px;
     background-color: var(--blue-thin);
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .cards .cards-wrapper .card .details .name {

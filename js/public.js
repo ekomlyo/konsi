@@ -147,6 +147,9 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     categoriesData.forEach(category => {
         const span = document.createElement('span');
         span.textContent = category;
+        span.onclick = () => {
+            handleCategoryFilter(category);
+        };
         categories.appendChild(span);
     });
 
@@ -210,7 +213,7 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     // Button Open
     const btnOpen = document.createElement('div');
     btnOpen.className = 'btn-open';
-    btnOpen.onclick = function () {
+    btnOpen.onclick = () => {
         viewDetails(idData);
     };
 
@@ -233,6 +236,20 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     return card;
 }
 
+// Category Filter
+function handleCategoryFilter(category) {
+    const time = getTimeFilter();
+    const categories = getCategoriesFilter(category);
+    const priceRange = getPriceRangeFilter();
+
+    handleFilter(time, categories, priceRange);
+
+    // save filter preferences
+    saveFilterPreferences(time, categories, priceRange);
+
+    // show preloader
+    showPreloader();
+}
 
 // View Details
 function viewDetails(id) {

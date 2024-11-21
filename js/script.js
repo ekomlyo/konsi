@@ -228,7 +228,7 @@ form.addEventListener('submit', (e) => {
     setFilterVisibility();
 
     // save filter preferences
-    saveFilterPreferences();
+    saveFilterPreferences(time, categories, priceRange);
 
     // show preloader
     showPreloader();
@@ -244,13 +244,17 @@ function getTimeFilter() {
     return time.value == 'Terbaru' ? 'latest' : 'longest';
 }
 
-function getCategoriesFilter() {
+function getCategoriesFilter(categoryData) {
     const categories = form.querySelectorAll('.form-group .categories .category-group input[type=checkbox]:checked');
     let data = [];
 
-    categories.forEach(category => {
-        data.push(category.value);
-    });
+    if (categoryData) {
+        data.push(categoryData);
+    } else {
+        categories.forEach(category => {
+            data.push(category.value);
+        });
+    }
 
     return data;
 }
@@ -275,10 +279,10 @@ let filterPreferences = {
     priceRange: { min: 0, max: 0 }
 };
 
-function saveFilterPreferences() {
-    filterPreferences.time = getTimeFilter();
-    filterPreferences.categories = getCategoriesFilter();
-    filterPreferences.priceRange = getPriceRangeFilter();
+function saveFilterPreferences(time, categories, priceRange) {
+    filterPreferences.time = time;
+    filterPreferences.categories = categories;
+    filterPreferences.priceRange = priceRange;
 
     // set filter badge
     const filterBadge = document.querySelector('.btn-filter .badge');
