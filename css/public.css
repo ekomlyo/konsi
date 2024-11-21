@@ -906,19 +906,19 @@ select:focus {
     opacity: 1;
 }
 
-/* SC Descriptions */
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc {
+/* SC Details */
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details {
     width: 100%;
     padding: 14px 6px 6px;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .categories {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .categories {
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .categories span {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .categories span {
     font-size: 10px;
     font-weight: 600;
     color: var(--blue-high);
@@ -928,41 +928,41 @@ select:focus {
     border-radius: 6px;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .name {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .name {
     font-size: 18px;
     font-weight: 800;
     margin-top: 6px;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .date,
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .location {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .date,
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .location {
     width: 100%;
     margin-top: 4px;
     display: flex;
     align-items: center;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .date img,
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .location img {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .date img,
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .location img {
     width: 16px;
     height: 16px;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .date p,
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .location p {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .date p,
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .location p {
     font-size: 10px;
     font-weight: 600;
     color: var(--grey-medium);
     margin-left: 2px;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .location p {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .location p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .desc-wrapper {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .details-wrapper {
     width: 100%;
     margin-top: 14px;
     padding-top: 10px;
@@ -971,28 +971,28 @@ select:focus {
     align-items: center;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .desc-wrapper .price {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .details-wrapper .price {
     width: 100%;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .desc-wrapper .price .price-wrapper {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .details-wrapper .price .price-wrapper {
     font-size: 12px;
     font-weight: 800;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .desc-wrapper .price .price-wrapper .period {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .details-wrapper .price .price-wrapper .period {
     font-weight: 600;
     margin-left: 2px;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .desc-wrapper .price .note {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .details-wrapper .price .note {
     font-size: 10px;
     font-weight: 600;
     color: var(--grey-high);
     margin-top: 4px;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .desc-wrapper .btn-open {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .details-wrapper .btn-open {
     margin-left: 16px;
     padding: 8px 10px 8px 14px;
     background-color: var(--blue-high);
@@ -1002,13 +1002,13 @@ select:focus {
     cursor: pointer;
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .desc-wrapper .btn-open p {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .details-wrapper .btn-open p {
     font-size: 12px;
     font-weight: 600;
     color: var(--white-basic);
 }
 
-.search .search-wrapper .search-cards .search-cards-wrapper .card .desc .desc-wrapper .btn-open img {
+.search .search-wrapper .search-cards .search-cards-wrapper .card .details .details-wrapper .btn-open img {
     width: 18px;
     height: 18px;
     margin-left: 4px;

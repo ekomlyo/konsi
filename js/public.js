@@ -137,9 +137,9 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     thumb.appendChild(paginationDots);
     card.appendChild(thumb);
 
-    // Create the desc div
-    const desc = document.createElement('div');
-    desc.className = 'desc';
+    // Create the details div
+    const details = document.createElement('div');
+    details.className = 'details';
 
     // Categories
     const categories = document.createElement('div');
@@ -150,13 +150,13 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
         categories.appendChild(span);
     });
 
-    desc.appendChild(categories);
+    details.appendChild(categories);
 
     // Name
     const name = document.createElement('p');
     name.className = 'name';
     name.textContent = nameData;
-    desc.appendChild(name);
+    details.appendChild(name);
 
     // Date
     const date = document.createElement('div');
@@ -171,7 +171,7 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     const dateText = document.createElement('p');
     dateText.textContent = `Diposting: ${dateData}`;
     date.appendChild(dateText);
-    desc.appendChild(date);
+    details.appendChild(date);
 
     // Location
     const location = document.createElement('div');
@@ -186,11 +186,11 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     const locationText = document.createElement('p');
     locationText.textContent = addressData;
     location.appendChild(locationText);
-    desc.appendChild(location);
+    details.appendChild(location);
 
-    // Description Wrapper
-    const descWrapper = document.createElement('div');
-    descWrapper.className = 'desc-wrapper';
+    // Details Wrapper
+    const detailsWrapper = document.createElement('div');
+    detailsWrapper.className = 'details-wrapper';
 
     // Price
     const price = document.createElement('div');
@@ -205,7 +205,7 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     note.textContent = '*) Harga bisa saja berubah.';
     price.appendChild(note);
 
-    descWrapper.appendChild(price);
+    detailsWrapper.appendChild(price);
 
     // Button Open
     const btnOpen = document.createElement('div');
@@ -225,9 +225,9 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     btnImg.loading = 'lazy';
     btnOpen.appendChild(btnImg);
 
-    descWrapper.appendChild(btnOpen);
-    desc.appendChild(descWrapper);
-    card.appendChild(desc);
+    detailsWrapper.appendChild(btnOpen);
+    details.appendChild(detailsWrapper);
+    card.appendChild(details);
 
     // return the card
     return card;

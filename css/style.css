@@ -134,19 +134,19 @@
     opacity: 1;
 }
 
-/* Descriptions */
-.cards .cards-wrapper .card .desc {
+/* Details */
+.cards .cards-wrapper .card .details {
     width: 100%;
     padding: 14px 6px 6px;
 }
 
-.cards .cards-wrapper .card .desc .categories {
+.cards .cards-wrapper .card .details .categories {
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.cards .cards-wrapper .card .desc .categories span {
+.cards .cards-wrapper .card .details .categories span {
     font-size: 10px;
     font-weight: 600;
     color: var(--blue-high);
@@ -156,41 +156,41 @@
     border-radius: 6px;
 }
 
-.cards .cards-wrapper .card .desc .name {
+.cards .cards-wrapper .card .details .name {
     font-size: 18px;
     font-weight: 800;
     margin-top: 6px;
 }
 
-.cards .cards-wrapper .card .desc .date,
-.cards .cards-wrapper .card .desc .location {
+.cards .cards-wrapper .card .details .date,
+.cards .cards-wrapper .card .details .location {
     width: 100%;
     margin-top: 4px;
     display: flex;
     align-items: center;
 }
 
-.cards .cards-wrapper .card .desc .date img,
-.cards .cards-wrapper .card .desc .location img {
+.cards .cards-wrapper .card .details .date img,
+.cards .cards-wrapper .card .details .location img {
     width: 16px;
     height: 16px;
 }
 
-.cards .cards-wrapper .card .desc .date p,
-.cards .cards-wrapper .card .desc .location p {
+.cards .cards-wrapper .card .details .date p,
+.cards .cards-wrapper .card .details .location p {
     font-size: 10px;
     font-weight: 600;
     color: var(--grey-medium);
     margin-left: 2px;
 }
 
-.cards .cards-wrapper .card .desc .location p {
+.cards .cards-wrapper .card .details .location p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.cards .cards-wrapper .card .desc .desc-wrapper {
+.cards .cards-wrapper .card .details .details-wrapper {
     width: 100%;
     margin-top: 14px;
     padding-top: 10px;
@@ -199,28 +199,28 @@
     align-items: center;
 }
 
-.cards .cards-wrapper .card .desc .desc-wrapper .price {
+.cards .cards-wrapper .card .details .details-wrapper .price {
     width: 100%;
 }
 
-.cards .cards-wrapper .card .desc .desc-wrapper .price .price-wrapper {
+.cards .cards-wrapper .card .details .details-wrapper .price .price-wrapper {
     font-size: 12px;
     font-weight: 800;
 }
 
-.cards .cards-wrapper .card .desc .desc-wrapper .price .price-wrapper .period {
+.cards .cards-wrapper .card .details .details-wrapper .price .price-wrapper .period {
     font-weight: 600;
     margin-left: 2px;
 }
 
-.cards .cards-wrapper .card .desc .desc-wrapper .price .note {
+.cards .cards-wrapper .card .details .details-wrapper .price .note {
     font-size: 10px;
     font-weight: 600;
     color: var(--grey-high);
     margin-top: 4px;
 }
 
-.cards .cards-wrapper .card .desc .desc-wrapper .btn-open {
+.cards .cards-wrapper .card .details .details-wrapper .btn-open {
     margin-left: 16px;
     padding: 8px 10px 8px 14px;
     background-color: var(--blue-high);
@@ -230,13 +230,13 @@
     cursor: pointer;
 }
 
-.cards .cards-wrapper .card .desc .desc-wrapper .btn-open p {
+.cards .cards-wrapper .card .details .details-wrapper .btn-open p {
     font-size: 12px;
     font-weight: 600;
     color: var(--white-basic);
 }
 
-.cards .cards-wrapper .card .desc .desc-wrapper .btn-open img {
+.cards .cards-wrapper .card .details .details-wrapper .btn-open img {
     width: 18px;
     height: 18px;
     margin-left: 4px;
