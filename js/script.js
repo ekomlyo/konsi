@@ -284,15 +284,15 @@ function saveFilterPreferences(time, categories, priceRange) {
     filterPreferences.categories = categories;
     filterPreferences.priceRange = priceRange;
 
-    // set filter badge
+    // update filter badge
     const filterBadge = document.querySelector('.btn-filter .badge');
     let badgeCount = 1;
 
-    if (getCategoriesFilter().length > 0) {
+    if (categories.length > 0) {
         badgeCount++;
     }
 
-    if (getPriceRangeFilter().min != 0 || getPriceRangeFilter().max != 0) {
+    if (priceRange.min != 0 || priceRange.max != 0) {
         badgeCount++;
     }
 
