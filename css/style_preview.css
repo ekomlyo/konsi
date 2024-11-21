@@ -200,8 +200,8 @@
     margin-left: 4px;
 }
 
-/* Descriptions */
-.preview .preview-wrapper .desc {
+/* Details */
+.preview .preview-wrapper .details {
     width: 100%;
     padding: 20px;
     background-color: var(--white-basic);
@@ -209,42 +209,42 @@
     border-radius: 0 0 6px 6px;
 }
 
-.preview .preview-wrapper .desc .name {
+.preview .preview-wrapper .details .name {
     font-size: 18px;
     font-weight: 800;
     width: 100%;
 }
 
-.preview .preview-wrapper .desc .date,
-.preview .preview-wrapper .desc .location {
+.preview .preview-wrapper .details .date,
+.preview .preview-wrapper .details .location {
     width: 100%;
     margin-top: 4px;
     display: flex;
     align-items: center;
 }
 
-.preview .preview-wrapper .desc .date img,
-.preview .preview-wrapper .desc .location img {
+.preview .preview-wrapper .details .date img,
+.preview .preview-wrapper .details .location img {
     width: 16px;
     height: 16px;
 }
 
-.preview .preview-wrapper .desc .date p,
-.preview .preview-wrapper .desc .location p {
+.preview .preview-wrapper .details .date p,
+.preview .preview-wrapper .details .location p {
     font-size: 10px;
     font-weight: 600;
     color: var(--grey-medium);
     margin-left: 2px;
 }
 
-.preview .preview-wrapper .desc .categories {
+.preview .preview-wrapper .details .categories {
     width: 100%;
     margin-top: 10px;
     display: flex;
     align-items: center;
 }
 
-.preview .preview-wrapper .desc .categories span {
+.preview .preview-wrapper .details .categories span {
     font-size: 10px;
     font-weight: 600;
     color: var(--blue-high);
@@ -256,7 +256,7 @@
 
 /* Public */
 .preview .preview-wrapper .units,
-.preview .preview-wrapper .facilities,
+.preview .preview-wrapper .desc,
 .preview .preview-wrapper .maps,
 .preview .preview-wrapper .contacts {
     width: 100%;
@@ -269,7 +269,7 @@
 }
 
 .preview .preview-wrapper .units .label,
-.preview .preview-wrapper .facilities .label,
+.preview .preview-wrapper .desc .label,
 .preview .preview-wrapper .maps .label,
 .preview .preview-wrapper .contacts .label {
     font-size: 14px;
@@ -323,8 +323,8 @@
     margin-left: 2px;
 }
 
-/* Facilities */
-.preview .preview-wrapper .facilities .contents {
+/* Description */
+.preview .preview-wrapper .desc .contents {
     font-size: 12px;
     font-weight: 500;
     width: 100%;
@@ -601,14 +601,14 @@
         max-width: 100%;
     }
 
-    /* Descriptions */
-    .preview .preview-wrapper .desc {
+    /* Details */
+    .preview .preview-wrapper .details {
         border-radius: 0;
     }
 
     /* Public */
     .preview .preview-wrapper .units,
-    .preview .preview-wrapper .facilities,
+    .preview .preview-wrapper .desc,
     .preview .preview-wrapper .maps,
     .preview .preview-wrapper .contacts {
         border-radius: 0;

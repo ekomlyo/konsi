@@ -289,7 +289,7 @@ function setImageSlider_gl() {
 
 
 // Load Content
-function loadContent(dateData, nameData, categoriesData, imagesData, addressData, unitsData, facilitiesData, mapsData, contactsData) {
+function loadContent(dateData, nameData, categoriesData, imagesData, addressData, unitsData, descData, mapsData, contactsData) {
     // Thumbnail & Gallery - Image Slider
     const carousel_tb = document.querySelector('.thumb .carousel');
     const carousel_gl = document.querySelector('.gallery .carousel');
@@ -321,19 +321,19 @@ function loadContent(dateData, nameData, categoriesData, imagesData, addressData
     totalPage_gl.textContent = imagesData.length;
 
     // Name
-    const name = document.querySelector('.desc .name');
+    const name = document.querySelector('.details .name');
     name.textContent = nameData;
 
     // Date
-    const date = document.querySelector('.desc .date p');
+    const date = document.querySelector('.details .date p');
     date.textContent = `Diposting: ${dateData}`;
 
     // Location
-    const location = document.querySelector('.desc .location p');
+    const location = document.querySelector('.details .location p');
     location.textContent = addressData;
 
     // Categories
-    const categories = document.querySelector('.desc .categories');
+    const categories = document.querySelector('.details .categories');
     categoriesData.forEach(category => {
         const span = document.createElement('span');
         span.textContent = category;
@@ -370,9 +370,9 @@ function loadContent(dateData, nameData, categoriesData, imagesData, addressData
         unitsCategories.appendChild(category);
     });
 
-    // Facilities
-    const facilities = document.querySelector('.facilities .contents');
-    facilities.innerText = facilitiesData;
+    // Description
+    const desc = document.querySelector('.desc .contents');
+    desc.innerText = descData;
 
     // Maps
     const maps = document.querySelector('.maps iframe');
@@ -440,12 +440,12 @@ fetch('https://script.google.com/macros/s/AKfycbzs7UKtNeiDGxEtIw-Ia5EBvR3Q-Zyepl
         const images = data.data[0].images;
         const address = data.data[0].address;
         const units = data.data[0].units;
-        const facilities = data.data[0].desc;
+        const desc = data.data[0].desc;
         const maps = data.data[0].maps;
         const contacts = data.data[0].contacts;
 
         // load content
-        loadContent(date, name, categories, images, address, units, facilities, maps, contacts);
+        loadContent(date, name, categories, images, address, units, desc, maps, contacts);
 
         console.log(data);
     })
