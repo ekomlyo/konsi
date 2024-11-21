@@ -279,6 +279,20 @@ function saveFilterPreferences() {
     filterPreferences.time = getTimeFilter();
     filterPreferences.categories = getCategoriesFilter();
     filterPreferences.priceRange = getPriceRangeFilter();
+
+    // set filter badge
+    const filterBadge = document.querySelector('.btn-filter .badge');
+    let badgeCount = 1;
+
+    if (getCategoriesFilter().length > 0) {
+        badgeCount++;
+    }
+
+    if (getPriceRangeFilter().min != 0 || getPriceRangeFilter().max != 0) {
+        badgeCount++;
+    }
+
+    filterBadge.textContent = badgeCount;
 }
 
 function loadFilterPreferences() {
