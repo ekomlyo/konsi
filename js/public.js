@@ -265,6 +265,7 @@ const searchOuterColor = search.querySelector('.outer-color');
 const searchBox = search.querySelector('.search-wrapper .search-box');
 const searchCards = search.querySelector('.search-wrapper .search-cards');
 const searchBlank = search.querySelector('.search-wrapper .search-blank');
+const searchBlankMessage = searchBlank.querySelector('p');
 const searchBoxInput = search.querySelector('.search-box-input input');
 const searchCardsWrapper = search.querySelector('.search-cards .search-cards-wrapper');
 let animSearchIsRunning = false;
@@ -280,6 +281,9 @@ function setSearchVisibility() {
             searchCards.classList.remove('active');
             searchBlank.classList.remove('active');
             setTimeout(() => {
+                // update search blank message
+                searchBlankMessage.textContent = 'Temukan Hunianmu!';
+
                 search.classList.remove('active');
                 animSearchIsRunning = false;
             }, 300);
@@ -484,6 +488,9 @@ function handleSearch() {
                 if (!searchBlank.classList.contains('active')) {
                     searchBlank.classList.add('active');
                 }
+
+                // update search blank message
+                searchBlankMessage.textContent = 'Hunian tidak ditemukan.';
             }
 
             // console.log(data);

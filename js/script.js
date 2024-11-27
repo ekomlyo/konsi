@@ -338,6 +338,8 @@ function loadFilterPreferences() {
 
 
 // Filter Handler
+let lastRequestedData = [];
+
 function handleFilter(timeData, categoriesData, priceRangeData) {
     const request = {
         time: timeData,
@@ -351,29 +353,52 @@ function handleFilter(timeData, categoriesData, priceRangeData) {
     })
         .then(response => response.json())
         .then(data => {
-            // clear the cards wrapper content
-            const cardsWrapper = document.querySelector('.cards .cards-wrapper');
-            cardsWrapper.innerHTML = '';
+            // reset lastRequestedData to avoid duplicate data when categoryFilter is called
+            lastRequestedData = [];
 
             if (data.data) {
+                let requestedDataGroup = [];
+
                 data.data.forEach((item, index) => {
-                    // parsing data
-                    const id = item.id;
-                    const date = item.date;
-                    const name = item.name;
-                    const categories = item.categories;
-                    const images = item.images;
-                    const address = item.address;
-                    const priceRange = item.priceRange;
+                    // add data to requestedDataGroup
+                    requestedDataGroup.push({
+                        id: item.id,
+                        date: item.date,
+                        name: item.name,
+                        categories: item.categories,
+                        images: item.images,
+                        address: item.address,
+                        priceRange: item.priceRange
+                    });
 
-                    // create new card
-                    const newCard = createCard(index, id, date, name, categories, images, address, priceRange, true);
+                    // if the next index is a multiple of 12 or last, add requestedDataGroup to lastRequestedData
+                    if ((index + 1) % 12 === 0 || index === data.data.length - 1) {
+                        lastRequestedData.push(requestedDataGroup);
+                        requestedDataGroup = [];
 
-                    // append the new card to the cards wrapper
-                    cardsWrapper.appendChild(newCard);
+                        // update total page value
+                        const totalPage = document.querySelector('.view-more .total-page');
+                        totalPage.textContent = lastRequestedData.length;
+                    }
                 });
+
+                // show data
+                handleViewMore(lastRequestedData[0]);
+
+                // show view more
+                const viewMore = document.querySelector('.view-more');
+                viewMore.style.display = 'flex';
+
             } else {
-                cardsWrapper.innerHTML = 'Tidak ada data.';
+                const cardsWrapper = document.querySelector('.cards .cards-wrapper');
+                cardsWrapper.innerHTML = `
+            <div class="cards-blank">
+                <p>Hunian tidak tersedia.</p>
+            </div>`;
+
+                // hide view more
+                const viewMore = document.querySelector('.view-more');
+                viewMore.style.display = 'none';
             }
 
             // console.log(data);
@@ -382,8 +407,6 @@ function handleFilter(timeData, categoriesData, priceRangeData) {
             // console.error(error);
         })
         .finally(() => {
-            // setup image slider
-            setImageSlider();
             // hide preloader
             hidePreloader();
         });
@@ -392,3 +415,55 @@ function handleFilter(timeData, categoriesData, priceRangeData) {
 
 // Initialize
 handleFilter();
+
+
+// View More
+const btnViewPrevious = document.querySelector('.view-more .btn-view-previous');
+const btnViewNext = document.querySelector('.view-more .btn-view-next');
+let currentRequestedDataGroup = 0;
+
+btnViewPrevious.addEventListener('click', () => {
+    if (currentRequestedDataGroup != 0) {
+        currentRequestedDataGroup--;
+        handleViewMore(lastRequestedData[currentRequestedDataGroup]);
+    }
+});
+
+btnViewNext.addEventListener('click', () => {
+    if (currentRequestedDataGroup != lastRequestedData.length - 1) {
+        currentRequestedDataGroup++;
+        handleViewMore(lastRequestedData[currentRequestedDataGroup]);
+    }
+});
+
+
+// View More Handler
+function handleViewMore(data) {
+    // clear the cards wrapper content
+    const cardsWrapper = document.querySelector('.cards .cards-wrapper');
+    cardsWrapper.innerHTML = '';
+
+    data.forEach((item, index) => {
+        // parsing data
+        const id = item.id;
+        const date = item.date;
+        const name = item.name;
+        const categories = item.categories;
+        const images = item.images;
+        const address = item.address;
+        const priceRange = item.priceRange;
+
+        // create new card
+        const newCard = createCard(index, id, date, name, categories, images, address, priceRange, true);
+
+        // append the new card to the cards wrapper
+        cardsWrapper.appendChild(newCard);
+    });
+
+    // setup image slider
+    setImageSlider();
+
+    // update current page value
+    const currentPage = document.querySelector('.view-more .current-page');
+    currentPage.textContent = currentRequestedDataGroup + 1;
+}
