@@ -955,7 +955,7 @@ select:focus {
     font-size: 10px;
     font-weight: 600;
     color: var(--grey-medium);
-    margin-left: 2px;
+    margin-left: 4px;
 }
 
 .search .search-wrapper .search-cards .search-cards-wrapper .card .details .location p {
