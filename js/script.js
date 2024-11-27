@@ -367,7 +367,7 @@ function handleFilter(timeData, categoriesData, priceRangeData) {
                     const priceRange = item.priceRange;
 
                     // create new card
-                    const newCard = createCard(index, id, date, name, categories, images, address, priceRange);
+                    const newCard = createCard(index, id, date, name, categories, images, address, priceRange, true);
 
                     // append the new card to the cards wrapper
                     cardsWrapper.appendChild(newCard);

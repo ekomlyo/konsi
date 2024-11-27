@@ -64,7 +64,7 @@ document.querySelector('.copyright .year').innerHTML = date.getFullYear();
 
 
 // Create Card
-function createCard(index, idData, dateData, nameData, categoriesData, imagesData, addressData, priceRangeData) {
+function createCard(index, idData, dateData, nameData, categoriesData, imagesData, addressData, priceRangeData, addCategoryFilter) {
     // Create the card div
     const card = document.createElement('div');
     card.className = `card number-${index}`;
@@ -147,9 +147,11 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     categoriesData.forEach(category => {
         const span = document.createElement('span');
         span.textContent = category;
-        span.onclick = () => {
-            handleCategoryFilter(category);
-        };
+        if (addCategoryFilter) {
+            span.onclick = () => {
+                handleCategoryFilter(category);
+            };
+        }
         categories.appendChild(span);
     });
 
@@ -466,7 +468,7 @@ function handleSearch() {
                     const priceRange = item.priceRange;
 
                     // create new card
-                    const newCard = createCard(index, id, date, name, categories, images, address, priceRange);
+                    const newCard = createCard(index, id, date, name, categories, images, address, priceRange, false);
 
                     // append the new card to the search cards wrapper
                     searchCardsWrapper.appendChild(newCard);
