@@ -355,7 +355,7 @@ function loadContent(dateData, nameData, categoriesData, imagesData, addressData
         categoryWrapper.className = 'category-wrapper';
 
         const categoryImg = document.createElement('img');
-        categoryImg.src = '/resources/home-dark.svg';
+        categoryImg.src = '/resources/building-community-grey.svg';
         categoryImg.alt = 'category';
         categoryImg.draggable = false;
         categoryImg.loading = 'lazy';

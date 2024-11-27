@@ -565,6 +565,7 @@ body {
 .footer .footer-wrapper .invitation .hook {
     font-size: 12px;
     font-weight: 700;
+    text-align: center;
     color: var(--white-basic);
 }
 
