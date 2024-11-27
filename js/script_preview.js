@@ -451,10 +451,10 @@ fetch('https://script.google.com/macros/s/AKfycbzs7UKtNeiDGxEtIw-Ia5EBvR3Q-Zyepl
         // load content
         loadContent(date, name, categories, images, address, units, desc, maps, contacts);
 
-        console.log(data);
+        // console.log(data);
     })
     .catch(error => {
-        console.error(error);
+        // console.error(error);
     })
     .finally(() => {
         // setup thumbnail image slider
@@ -463,23 +463,6 @@ fetch('https://script.google.com/macros/s/AKfycbzs7UKtNeiDGxEtIw-Ia5EBvR3Q-Zyepl
         // hide preloader
         hidePreloader();
     });
-
-
-
-// function sendMessageToWhatsApp(number, message) {
-//     // Encode pesan untuk URL agar dapat ditransmisikan dengan aman
-//     const encodedMessage = encodeURIComponent(message);
-    
-//     // Membuat URL untuk WhatsApp Web atau aplikasi WhatsApp di perangkat mobile
-//     const whatsappUrl = `https://wa.me/${number}?text=${encodedMessage}`;
-    
-//     // Membuka URL di tab atau jendela baru
-//     window.open(whatsappUrl, '_blank');
-// }
-
-// // Contoh pemanggilan fungsi
-// sendMessageToWhatsApp('6281234567890', 'Halo, ini pesan dari JavaScript!');
-
 
 
 // Telegram PostData

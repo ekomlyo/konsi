@@ -376,10 +376,10 @@ function handleFilter(timeData, categoriesData, priceRangeData) {
                 cardsWrapper.innerHTML = 'Tidak ada data.';
             }
 
-            console.log(data);
+            // console.log(data);
         })
         .catch(error => {
-            console.error(error);
+            // console.error(error);
         })
         .finally(() => {
             // setup image slider
