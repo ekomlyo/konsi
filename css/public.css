@@ -134,7 +134,7 @@ body {
     transition: color 0.3s ease-in-out;
 }
 
-.navbar .navbar-wrapper .actions .nav-links li a:hover {
+.navbar .navbar-wrapper .actions .nav-links li:not(.active) a:hover {
     color: var(--grey-high);
 }
 
@@ -394,7 +394,7 @@ body {
     transition: filter 0.3s ease-in-out;
 }
 
-.navbar .navbar-wrapper .actions .sidebar .sidebar-wrapper .sdb-actions .sdb-nav-links li a:hover img {
+.navbar .navbar-wrapper .actions .sidebar .sidebar-wrapper .sdb-actions .sdb-nav-links li:not(.active) a:hover img {
     filter: invert(1);
 }
 
@@ -406,7 +406,7 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-.navbar .navbar-wrapper .actions .sidebar .sidebar-wrapper .sdb-actions .sdb-nav-links li a:hover p {
+.navbar .navbar-wrapper .actions .sidebar .sidebar-wrapper .sdb-actions .sdb-nav-links li:not(.active) a:hover p {
     color: var(--grey-high);
 }
 

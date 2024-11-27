@@ -50,7 +50,7 @@ function scrollUp() {
 };
 
 window.onscroll = () => {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         btnScroll.classList.add('active');
     } else {
         btnScroll.classList.remove('active');
