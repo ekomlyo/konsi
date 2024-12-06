@@ -454,7 +454,7 @@ function handleViewMore(data) {
         const priceRange = item.priceRange;
 
         // create new card
-        const newCard = createCard(index, id, date, name, categories, images, address, priceRange, true);
+        const newCard = createCard(index, id, date, name, categories, images, address, priceRange);
 
         // append the new card to the cards wrapper
         cardsWrapper.appendChild(newCard);

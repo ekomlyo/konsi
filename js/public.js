@@ -64,7 +64,7 @@ document.querySelector('.copyright .year').innerHTML = date.getFullYear();
 
 
 // Create Card
-function createCard(index, idData, dateData, nameData, categoriesData, imagesData, addressData, priceRangeData, addCategoryFilter) {
+function createCard(index, idData, dateData, nameData, categoriesData, imagesData, addressData, priceRangeData) {
     // Create the card div
     const card = document.createElement('div');
     card.className = `card number-${index}`;
@@ -147,11 +147,9 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     categoriesData.forEach(category => {
         const span = document.createElement('span');
         span.textContent = category;
-        if (addCategoryFilter) {
-            span.onclick = () => {
-                handleCategoryFilter(category);
-            };
-        }
+        span.onclick = () => {
+            handleSearchByCategory(category);
+        };
         categories.appendChild(span);
     });
 
@@ -239,18 +237,26 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
 }
 
 // Category Filter
-function handleCategoryFilter(category) {
-    const time = getTimeFilter();
-    const categories = getCategoriesFilter(category);
-    const priceRange = getPriceRangeFilter();
+function handleSearchByCategory(category) {
+    // if search visible
+    if (search.classList.contains('active')) {
+        // clear the search cards wrapper content
+        searchCardsWrapper.innerHTML = '';
 
-    handleFilter(time, categories, priceRange);
+        // show search blank
+        searchBlank.classList.add('active');
 
-    // save filter preferences
-    saveFilterPreferences(time, categories, priceRange);
+    } else {
+        // show search
+        setSearchVisibility();
+    }
 
-    // show preloader
-    showPreloader();
+    // update search blank message
+    searchBlankMessage.textContent = 'Mencari hunian . . .';
+
+    // update search query
+    searchBoxInput.value = category;
+    handleSearch();
 }
 
 // View Details
@@ -282,7 +288,7 @@ function setSearchVisibility() {
             searchBlank.classList.remove('active');
             setTimeout(() => {
                 // update search blank message
-                searchBlankMessage.textContent = 'Temukan Hunianmu!';
+                searchBlankMessage.textContent = 'Temukan hunianmu !';
 
                 search.classList.remove('active');
                 animSearchIsRunning = false;
@@ -472,7 +478,7 @@ function handleSearch() {
                     const priceRange = item.priceRange;
 
                     // create new card
-                    const newCard = createCard(index, id, date, name, categories, images, address, priceRange, false);
+                    const newCard = createCard(index, id, date, name, categories, images, address, priceRange);
 
                     // append the new card to the search cards wrapper
                     searchCardsWrapper.appendChild(newCard);
@@ -511,6 +517,15 @@ function handleSearch() {
 
 document.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && search.classList.contains('active') && searchBoxInput.value.length > 0) {
+        // clear the search cards wrapper content
+        searchCardsWrapper.innerHTML = '';
+
+        // show search blank
+        searchBlank.classList.add('active');
+
+        // update search blank message
+        searchBlankMessage.textContent = 'Mencari hunian . . .';
+
         handleSearch();
     }
 });
