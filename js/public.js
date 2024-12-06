@@ -211,11 +211,9 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     detailsWrapper.appendChild(price);
 
     // Button Open
-    const btnOpen = document.createElement('div');
+    const btnOpen = document.createElement('a');
+    btnOpen.href = `preview.html?id=${idData}`;
     btnOpen.className = 'btn-open';
-    btnOpen.onclick = () => {
-        viewDetails(idData);
-    };
 
     const btnText = document.createElement('p');
     btnText.textContent = 'Lihat';
@@ -236,7 +234,8 @@ function createCard(index, idData, dateData, nameData, categoriesData, imagesDat
     return card;
 }
 
-// Category Filter
+
+// Search by Category
 function handleSearchByCategory(category) {
     // if search visible
     if (search.classList.contains('active')) {
@@ -257,11 +256,6 @@ function handleSearchByCategory(category) {
     // update search query
     searchBoxInput.value = category;
     handleSearch();
-}
-
-// View Details
-function viewDetails(id) {
-    window.open(`preview.html?id=${id}`, '_self');
 }
 
 
