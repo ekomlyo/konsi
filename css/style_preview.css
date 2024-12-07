@@ -254,6 +254,7 @@
     background-color: var(--blue-thin);
     border: 1.5px solid var(--blue-high);
     border-radius: 16px;
+    cursor: pointer;
 }
 
 /* Public */

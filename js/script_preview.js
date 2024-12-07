@@ -341,6 +341,9 @@ function loadContent(dateData, nameData, categoriesData, imagesData, addressData
     categoriesData.forEach(category => {
         const span = document.createElement('span');
         span.textContent = category;
+        span.onclick = () => {
+            handleSearchByCategory(category);
+        };
         categories.appendChild(span);
     });
 
