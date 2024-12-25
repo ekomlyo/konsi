@@ -129,6 +129,7 @@ body {
 /* Search Box */
 .navbar .navbar-wrapper .actions .search-box {
     width: 100%;
+    min-width: 44px;
     max-width: 400px;
     margin-left: 48px;
     padding: 8px 12px;
@@ -149,8 +150,10 @@ body {
     font-size: 12px;
     font-weight: 600;
     color: var(--grey-medium);
-    min-width: max-content;
     margin: 0 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Actions Wrapper */
@@ -326,8 +329,10 @@ body {
     font-size: 12px;
     font-weight: 600;
     color: var(--grey-medium);
-    min-width: max-content;
     margin: 0 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* SDB Label */

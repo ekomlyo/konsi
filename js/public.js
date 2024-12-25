@@ -282,7 +282,7 @@ function setSearchVisibility() {
             searchBlank.classList.remove('active');
             setTimeout(() => {
                 // update search blank message
-                searchBlankMessage.textContent = 'Temukan hunianmu !';
+                searchBlankMessage.innerHTML = '<strong>Tips:</strong> Gunakan nama, daerah, fasilitas, dan sebagainya untuk mencari hunian kamu.';
 
                 search.classList.remove('active');
                 animSearchIsRunning = false;
@@ -490,7 +490,7 @@ function handleSearch() {
                 }
 
                 // update search blank message
-                searchBlankMessage.textContent = 'Hunian tidak ditemukan.';
+                searchBlankMessage.innerHTML = 'Hunian tidak ditemukan.';
             }
 
             // console.log(data);
@@ -510,7 +510,7 @@ function handleSearch() {
 }
 
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" && search.classList.contains('active') && searchBoxInput.value.length > 0) {
+    if (e.key === "Enter" && search.classList.contains('active') && searchBoxInput.value.trim().length > 0) {
         // clear the search cards wrapper content
         searchCardsWrapper.innerHTML = '';
 
@@ -518,7 +518,7 @@ document.addEventListener("keydown", (e) => {
         searchBlank.classList.add('active');
 
         // update search blank message
-        searchBlankMessage.textContent = 'Mencari hunian . . .';
+        searchBlankMessage.innerHTML = 'Mencari hunian . . .';
 
         handleSearch();
     }

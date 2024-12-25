@@ -610,6 +610,7 @@
 
     /* Search Box */
     .navbar .navbar-wrapper .actions .search-box {
+        width: calc(100% - 86px);
         max-width: 100%;
     }
 }
