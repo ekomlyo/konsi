@@ -497,8 +497,8 @@ function setLoaderVisibility(type) {
         loaderOuterColor.classList.remove('active');
         loaderWrapper.classList.remove('active');
         setTimeout(() => {
-            loaderAnim.src = 'https://lottie.host/embed/88be2eb0-65cb-490b-a43b-03177e2462b8/eyxwRMVsPl.json';
-            loaderAnim.style = 'background-color: #EDFFF2;';
+            loaderAnim.src = 'https://lottie.host/embed/f1edfadc-5dcd-45e2-84ee-24068d31bbbc/7XZEm6EeMs.lottie';
+            loaderAnim.style = 'background-image: linear-gradient(0deg, var(--green-medium), var(--green-low), var(--green-thin)); border: 2px solid var(--green-low);';
             loaderTitle.textContent = 'Sukses';
             loaderDesc.textContent = 'Proses unggah selesai! Data kamu akan segera kami proses.';
             btnCloseLoader.style = 'display: block;';
@@ -516,8 +516,8 @@ function setLoaderVisibility(type) {
         loaderOuterColor.classList.remove('active');
         loaderWrapper.classList.remove('active');
         setTimeout(() => {
-            loaderAnim.src = 'https://lottie.host/embed/94dc31c5-5aed-4520-a5b6-381f6d8ddd3e/HxTU2QqH5S.json';
-            loaderAnim.style = 'background-color: #FFEDED;';
+            loaderAnim.src = 'https://lottie.host/embed/18c79d00-0744-4f48-961e-d2c36b6906d7/oqm5Y5L3F2.lottie';
+            loaderAnim.style = 'background-image: linear-gradient(0deg, var(--red-medium), var(--red-low), var(--red-thin)); border: 2px solid var(--red-low);';
             loaderTitle.textContent = 'Gagal';
             loaderDesc.textContent = 'Opps! Maaf sepertinya ada masalah pada sistem kami. Coba beberapa saat lagi.';
             btnCloseLoader.style = 'display: block;';
@@ -535,8 +535,8 @@ btnCloseLoader.addEventListener('click', () => {
     loaderOuterColor.classList.remove('active');
     loaderWrapper.classList.remove('active');
     setTimeout(() => {
-        loaderAnim.src = 'https://lottie.host/embed/bfe71157-e6dc-4447-a800-ea30b4bfcded/3H83Fp5huY.json';
-        loaderAnim.style = 'background-color: #ECF1FE;';
+        loaderAnim.src = 'https://lottie.host/embed/359ab9b5-8179-4d86-94de-89efbb2ab524/cdmA9J5eQA.lottie';
+        loaderAnim.style = 'background-image: linear-gradient(0deg, var(--blue-medium), var(--blue-low), var(--blue-thin)); border: 2px solid var(--blue-low);';
         loaderTitle.textContent = 'Mengunggah...';
         loaderDesc.textContent = 'Harap jangan menutup halaman ini sampai proses unggah selesai.';
         btnCloseLoader.style = 'display: none;';
@@ -546,7 +546,7 @@ btnCloseLoader.addEventListener('click', () => {
 });
 
 
-// Example of implementation of the update and deletion method
+// The example of implementation of the update and deletion method
 
 // const queryEncoded = encodeURIComponent("kost");
 // const data = {};

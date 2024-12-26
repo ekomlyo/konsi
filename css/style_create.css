@@ -639,7 +639,8 @@
 .loader .loader-wrapper iframe {
     width: 100%;
     height: 200px;
-    background-color: #ECF1FE;
+    background-image: linear-gradient(0deg, var(--blue-medium), var(--blue-low), var(--blue-thin));
+    border: 2px solid var(--blue-low);
     border-radius: 10px;
 }
 

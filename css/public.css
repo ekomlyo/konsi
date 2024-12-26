@@ -23,6 +23,14 @@
     --blue-medium: #6391F4;
     --blue-high: #366AD9;
     --blue-max: #305EC1;
+    --green-thin: #ecfff2;
+    --green-low: #bef5ce;
+    --green-medium: #66f58c;
+    --green-high: #3bbd5e;
+    --red-thin: #ffebeb;
+    --red-low: #f7c1c1;
+    --red-medium: #f76767;
+    --red-high: #ff4e4e;
     --overlay-light-none: rgba(255, 255, 254, 0);
     --overlay-light-1: rgba(255, 255, 254, 0.2);
     --overlay-light-2: rgba(255, 255, 254, 0.5);
