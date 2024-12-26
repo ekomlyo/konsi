@@ -153,7 +153,7 @@
     margin: 0 8px 8px 0;
     padding: 6px 10px;
     background-color: var(--blue-thin);
-    border: 1.5px solid var(--blue-high);
+    border: 2px solid var(--blue-high);
     border-radius: 16px;
     cursor: pointer;
 }
